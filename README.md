@@ -7,12 +7,11 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 # Features
 
 * - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
-* - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit.
-* - **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, und mehr.
-* - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, z.B. Prismatik/Hyperion).
+* - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
+* - **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, uvm.
+* - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit Prismatik/Hyperion/HyperHDR/AmbiPro).
 * - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
-* - **OLED Display:** FPS Counter, Reale FPS Berechnung, wieviele FPS sind möglich anhand der der Daten die die der Controller empfängt,
-    ähnlich der Frameraten Berechnung von Grafikarten, wie viele FPS schafft meine Hardware wirklich.
+* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Scchreiben
 
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 # Vorwort
@@ -104,7 +103,7 @@ grüße -= d3rb =-
 <br>
 <br>
 
-## [ Installation ]
+# [ Installation ]
 
 ## 1. Teensy 4.0 flashen
 * - Benötigte Software: Teensy Loader
@@ -149,7 +148,6 @@ grüße -= d3rb =-
 
 Links zu Komponenten & Software
 Teensy 4.0: https://www.pjrc.com/store/teensy40.html
-
 Display ST7789V 240x320 (SPI): https://de.aliexpress.com/item/1005009741238384.html
 
 DisplaySSD1306  : https://de.aliexpress.com/item/1005006141235306.html
