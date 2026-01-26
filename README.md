@@ -95,7 +95,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 * - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
 * - jtzt sollte dein Teensy Booten und du solltest diesen Bootscreen sehen.
 
-https://github.com/d3rb/repo/assets/12345/Bootsequenz.mp4
+https://github.com/d3rb/repo/assets/Bootsequenz.mp4
 
 
 ### 2. ESP32 flashen
