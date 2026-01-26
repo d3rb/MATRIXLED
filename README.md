@@ -140,6 +140,7 @@ grüße -= d3rb =-
  * - Storage:  PROGMEM (Flash) -> Served as Raw HTML.
  * - Comms:    REST API (/matrix, /data, /off, /threshold).
  * - Client:   Browser-side rendering (Canvas 2D) for Preview & Controls.
+ 
 <br>
 <br>
 
