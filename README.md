@@ -6,13 +6,12 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 ## Features
 
-* - **Dual-Core Architektur:**
-* - **ESP32:** Webinterface, WiFi-Management, Matrix-Regen-Berechnung.
-* - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+* - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit.
 * - **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, und mehr.
 * - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, z.B. Prismatik/Hyperion).
-* - **OLED Display:** Zeigt FPS, Systemstatus und IP-Adresse am Controller an.
+* - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+* - **OLED Display:** FPS Counter, Reale FPS Berechnung, wieviele FPS sind möglich anhand der der Daten die empfangen werden, ähnlich eins der Frame   	  berechnung von Grafikarten, wie viele FPS schafft meine Hardware wirklich.
 
 ## Hardware Specs
 
