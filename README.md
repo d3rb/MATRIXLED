@@ -215,13 +215,8 @@ grüße -= d3rb =-
 ## Links zu Komponenten & Software
 *   **Teensy 4.0:** https://www.pjrc.com/store/teensy40.html
 *   **Display ST7789V 240x320 (SPI):** https://de.aliexpress.com/item/1005009741238384.html
-
 *   **Display SSD1306:** https://de.aliexpress.com/item/1005006141235306.html
-
 *   **ESP32-WROOM-32D:** https://de.aliexpress.com/item/1005007820190456.html
-
 *   **APA102:** https://de.aliexpress.com/item/32969463242.html
-
 *   **Level Shifter SN74AHCT125N:** https://de.aliexpress.com/item/1005010466137824.html
-
 *   **Taster Kailh 6x6x7.3mm:** https://de.aliexpress.com/item/1005005497422200.html
