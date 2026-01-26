@@ -2,7 +2,7 @@
 
 
 # MATRIX LED Controller 
-![](https://img.shields.io/badge/LEDs-WS2812B-orange?style=for-the-badge)
+
 High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
 
 ## Features
@@ -45,7 +45,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 
 *   **Controller 1:** Teensy 4.0 (übertaktet auf 696 MHz)
 *   **Controller 2:** ESP32 DevKit V4
-*   **LEDs:** APA102C (SPI)
+![](https://img.shields.io/badge/LEDs-APA102-orange?style=for-the-badge)*   **LEDs:** APA102C (SPI)
 *   **Display:** SH1106 OLED (I2C) = Teensy 4.0
 *   **Display:** ST7789V 240x320 (SPI) = ESP32 DevKit V4
 <br>
