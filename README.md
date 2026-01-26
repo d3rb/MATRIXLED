@@ -118,9 +118,9 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 Links zu Komponenten & Software
 Teensy 4.0: https://www.pjrc.com/store/teensy40.html
-Display ST7789V 240x320 (SPI): https://de.aliexpress.com/item/1005009741238384.html?gatewayAdapt=glo2deu
-DisplaySSD1306  : https://de.aliexpress.com/item/1005006141235306.html?pdp_ext_f=%7B%22order%22%3A%229070%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D 
-ESP32-WROOM-32D: https://de.aliexpress.com/item/1005007820190456.html?gatewayAdapt=glo2deu
-APA102: https://de.aliexpress.com/item/32969463242.html?gatewayAdapt=glo2deu
-Level Shifter SN74AHCT125N: https://de.aliexpress.com/item/1005010466137824.html?pdp_ext_f=%7B%22order%22%3A%2257%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D
-Taster Kailh 6x6x7.3mm : https://de.aliexpress.com/item/1005005497422200.html?gatewayAdapt=glo2deu
+Display ST7789V 240x320 (SPI): https://de.aliexpress.com/item/1005009741238384.html
+DisplaySSD1306  : https://de.aliexpress.com/item/1005006141235306.html
+ESP32-WROOM-32D: https://de.aliexpress.com/item/1005007820190456.html
+APA102: https://de.aliexpress.com/item/32969463242.html
+Level Shifter SN74AHCT125N: https://de.aliexpress.com/item/1005010466137824.html
+Taster Kailh 6x6x7.3mm : https://de.aliexpress.com/item/1005005497422200.html
