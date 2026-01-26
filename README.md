@@ -16,6 +16,9 @@ Hyperion/HyperHDR/AmbiPro).
 * - **Effekte:** "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm.
 * - **TFT Display** MAtrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
+
+!!!!!!!!!Platzhalter Bonus Print files upload .stl files !!!!!!!!!!!!!
+
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 
 # Vorwort
@@ -182,16 +185,16 @@ grüße -= d3rb =-
 * - jetzt sollte dein Teensy Booten, du solltest jetzt diesen Bootscreen sehen und deine LEDs sollten nach dem Booten leuchten (LED Test) steht im Display.
 
  
-<div align="left">
-  <table border="0">
-    <tr>
-      <td width="300">
-        <video src="https://github.com/user-attachments/assets/aa9a625d-cd0f-417a-9fad-41ca45eee43e" autoplay loop muted playsinline>
-        </video>
-      </td>
-    </tr>
-  </table>
-</div>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <video src="https://github.com/user-attachments/assets/aa9a625d-cd0f-417a-9fad-41ca45eee43e" autoplay loop muted playsinline width="100%"></video>
+    </td>
+    <td width="50%" align="center">
+      <video src="https://github.com/user-attachments/assets/aa9a625d-cd0f-417a-9fad-41ca45eee43e" autoplay loop muted playsinline width="100%"></video>
+    </td>
+  </tr>
+</table>
 
 
 ## 3. ESP32 flashen
