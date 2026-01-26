@@ -49,9 +49,11 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 *   **Display:** SH1106 OLED (I2C) = Teensy 4.0
 *   **Display:** ST7789V 240x320 (SPI) = ESP32 DevKit V4
 <br>
-
-
 <br>
+<br>
+<br>
+<br>
+
 ## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
   
  1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
@@ -75,7 +77,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
  *  - Hardware: USB PHY -> Internal 512 Byte DMA Ring Buffer.
  *  - Software: readExact() (ITCM) liest Block-weise in 'rgbIn' (DTCM).
  *  - Protocol: Adalight Header Check ("Ada") + Checksum/Timeout Logic.
- *  
+    
  STAGE 2: PROCESSING (SIMD-like Integer Math)
  *  - Function: processLEDs() (ITCM, FASTRUN).
  *  - Input:    8-Bit RGB Array (rgbIn).
