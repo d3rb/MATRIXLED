@@ -1,8 +1,8 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
 
 
-# MATRIX LED Controller
-
+# MATRIX LED Controller 
+![](https://img.shields.io/badge/LEDs-WS2812B-orange?style=for-the-badge)
 High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
 
 ## Features
