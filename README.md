@@ -18,6 +18,7 @@ Debug Menü
 
 <br>
 FPS Counter
+
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 
 * - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
