@@ -99,8 +99,10 @@ grüße -= d3rb =-
  * - Thermal:      Überwachung der Die-Temperatur (tempmon).
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
+
 <br>
 <br>
+
 ## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE @ ESP32 ]
 
  1. CORE ARCHITECTURE (ESP32-D0WD) (Dual-Core Xtensa LX6)
@@ -140,7 +142,7 @@ grüße -= d3rb =-
  * - Storage:  PROGMEM (Flash) -> Served as Raw HTML.
  * - Comms:    REST API (/matrix, /data, /off, /threshold).
  * - Client:   Browser-side rendering (Canvas 2D) for Preview & Controls.
- 
+
 <br>
 <br>
 
