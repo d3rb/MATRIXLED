@@ -11,7 +11,7 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 * - **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, uvm.
 * - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit Prismatik/Hyperion/HyperHDR/AmbiPro).
 * - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
-* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Scchreiben
+* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben
 
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 
@@ -99,13 +99,74 @@ grüße -= d3rb =-
  * - Thermal:      Überwachung der Die-Temperatur (tempmon).
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
-<br>
-<br>
-<br>
 
-# [ Installation ]
+## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE @ ESP32 ]
 
-## 1. Teensy 4.0 flashen
+ 1. CORE ARCHITECTURE (ESP32-D0WD) (Dual-Core Xtensa LX6)
+ * - Clock: 240 MHz (Max Performance Profile via setCpuFrequencyMhz).
+ * - Cores: Asymmetric Multiprocessing (AMP).
+ * - **Core 0:** High-Speed Serial Ingest & Protocol Parsing.
+ * - **Core 1:** UI Rendering, WiFi Stack, WebServer & State Logic.
+
+ 2. DISPLAY SUBSYSTEM
+ * - Driver: TFT_eSPI (Hardware SPI).
+ * - Mode:   Direct Framebuffer Access.
+
+## [ DATA PIPELINE: DUAL-CORE PARALLELISM ]
+
+ STAGE 1: INGEST (Core 0 - Background Task)
+ * - Source:   UART2 (Serial2) @ 4 Mbit/s from Teensy 4.0.
+ * - Buffer:   Expanded RX Buffer (2048 Bytes) via setRxBufferSize().
+ * - Function: serialDataReceiverTask() -> processTeensySerialData().
+ * - Logic:    Binary Header Search (0x42, 0x4D) -> State Extraction.
+ * - Output:   Writes to volatile global registers (teensyR/G/B).
+
+ STAGE 2: STATE MANAGEMENT (Shared Memory)
+ * - Type:     Volatile Global Variables.
+ * - Sync:     Implicit Atomic 32-bit Access (No Mutex needed for simple ints).
+ * - Data:     Color Data (RGB), System Mode (Matrix/Data/Off).
+
+ STAGE 3: RENDERING & LOGIC (Core 1 - Main Loop)
+ * - Context:  Arduino loop().
+ * - Input:    Reads volatile globals.
+ * - Graphics: Matrix Rain Engine (Char-based) or Data Dashboard (Rect-based).
+ * - Network:  Async WebServer Handling (server.handleClient).
+ * - Sync:     Watchdog on TEENSY_TRIGGER_PIN (Auto-Reboot on Signal Loss).
+
+## [ WEB INTERFACE LAYER ]
+
+ * - Stack:    React 18 + TailwindCSS (Single Page Application).
+ * - Storage:  PROGMEM (Flash) -> Served as Raw HTML.
+ * - Comms:    REST API (/matrix, /data, /off, /threshold).
+ * - Client:   Browser-side rendering (Canvas 2D) for Preview & Controls.
+<br>
+<br>
+# [ Installation & Setup ]
+
+## 1. Verkabeln / Wiring
+
+### Verbindung Teensy 4.0 <-> ESP32
+| Funktion | Teensy 4.0 Pin | ESP32 Pin | Beschreibung |
+| :--- | :--- | :--- | :--- |
+| **Serial RX** | 0 (RX1) | 17 (TX2) | Daten vom ESP zum Teensy |
+| **Serial TX** | 1 (TX1) | 16 (RX2) | Daten vom Teensy zum ESP |
+| **Sync/Trigger** | 3 | 33 | Synchronisation & Reset |
+| **GND** | GND | GND | **WICHTIG:** Gemeinsame Masse verbinden! |
+
+### ESP32 Display (ST7789 SPI)
+*Die Pins sind in der `platformio.ini` definiert:*
+*   **MOSI:** GPIO 23 / **SCLK:** GPIO 18 / **CS:** GPIO 26 / **DC:** GPIO 27 / **RST:** GPIO 4
+
+### Teensy 4.0 Peripherie
+| Komponente | Pin | Anmerkung |
+| :--- | :--- | :--- |
+| **LED Data** | 11 | APA102 Data (Grün) |
+| **LED Clock** | 13 | APA102 Clock (Gelb/Blau) |
+| **OLED SDA** | 18 | I2C Data (SH1106) |
+| **OLED SCL** | 19 | I2C Clock (SH1106) |
+| **Button** | 2 | Taster gegen GND |
+
+## 2. Teensy 4.0 flashen
 
 * - Benötigte Software: Teensy Loader
 * - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
@@ -125,14 +186,14 @@ grüße -= d3rb =-
 </div>
 
 
-## 2. ESP32 flashen
+## 3. ESP32 flashen
 * - Benötigte Software: Esptool oder ESP Download Tool.
 * - **Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
 * - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
 
-## Setup
+## 4. Setup
 
-1.  **Hardware verbinden:** Stelle sicher, dass ESP32 und Teensy korrekt verbunden sind (RX/TX für Kommunikation, Trigger-Pin).
+1.  **Hardware verbinden:** Stelle sicher, dass ESP32 und Teensy korrekt verbunden sind (siehe Tabelle oben).
 2.  **WiFi Setup:**
 * - Beim ersten Start (oder nach Reset) erstellt der ESP32 einen Access Point namens **MATRIX-SETUP**.
 * - Verbinde dich mit dem WLAN.
@@ -145,23 +206,23 @@ grüße -= d3rb =-
 
 <br>
 
-## 3.  **LED Konfiguration:**
+## 5.  **LED Konfiguration:**
 
 *   Der Teensy lernt die Anzahl der LEDs automatisch beim ersten Kontakt mit der PC-Software (Adalight Header)
 *   oder kann manuell über das Webinterface konfiguriert werden.
 
 
-Links zu Komponenten & Software
-Teensy 4.0: https://www.pjrc.com/store/teensy40.html
+## Links zu Komponenten & Software
+*   **Teensy 4.0:** https://www.pjrc.com/store/teensy40.html
 
-Display ST7789V 240x320 (SPI): https://de.aliexpress.com/item/1005009741238384.html
+*   **Display ST7789V 240x320 (SPI):** https://de.aliexpress.com/item/1005009741238384.html
 
-DisplaySSD1306  : https://de.aliexpress.com/item/1005006141235306.html
+*   **Display SSD1306:** https://de.aliexpress.com/item/1005006141235306.html
 
-ESP32-WROOM-32D: https://de.aliexpress.com/item/1005007820190456.html
+*   **ESP32-WROOM-32D:** https://de.aliexpress.com/item/1005007820190456.html
 
-APA102: https://de.aliexpress.com/item/32969463242.html
+*   **APA102:** https://de.aliexpress.com/item/32969463242.html
 
-Level Shifter SN74AHCT125N: https://de.aliexpress.com/item/1005010466137824.html
+*   **Level Shifter SN74AHCT125N:** https://de.aliexpress.com/item/1005010466137824.html
 
-Taster Kailh 6x6x7.3mm : https://de.aliexpress.com/item/1005005497422200.html
+*   **Taster Kailh 6x6x7.3mm:** https://de.aliexpress.com/item/1005005497422200.html
