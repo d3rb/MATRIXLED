@@ -53,7 +53,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 
 
    
-## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
+ [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
     
     1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
       - High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
@@ -69,7 +69,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
         -> Hält Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
         -> Ermöglicht Single-Cycle Zugriff auf LED-Daten.
    
-## [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
+ [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
    -------------------------------------------------------------------------
    STAGE 1: INGEST (USB High-Speed 480 Mbit/s)
       - Hardware: USB PHY -> Internal 512 Byte DMA Ring Buffer.
@@ -100,7 +100,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
       - Target:   ESP32 Web Controller (Telemetry & Preview).
       - Data:     Cluster-Downsampled RGB + Status (Binary Protocol).
 
-## [ TELEMETRY & SUPERVISOR ]
+ [ TELEMETRY & SUPERVISOR ]
    -------------------------------------------------------------------------
    - LPI2C (OLED): Overclocked auf 1 MHz (Fast Mode Plus) für min. Latenz.
    - FPS Engine:   Exponential Moving Average (EMA) Filter für glatte Anzeige.
