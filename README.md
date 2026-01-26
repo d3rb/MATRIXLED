@@ -15,15 +15,20 @@ Hyperion/HyperHDR/AmbiPro).
 ![Debug.Menü](assets/Debug.Screen.jpg)
 
 <br>
+
+![max.FPS.Wallpaper](assets/max.FPS.jpg)
+
 * - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
 * - **Effekte:** "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm.
 * - **TFT Display** MAtrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
+<br>
+<br>
 
 !!!!!!!!!Platzhalter Bonus Print files upload .stl files !!!!!!!!!!!!!
 
-![max.FPS.Wallpaper](assets/max.FPS.jpg)
+<br>
 
 # Vorwort
 
