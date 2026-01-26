@@ -1,5 +1,5 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
-![Bootsequenz](assets/Bootsequenz.mp4)
+![Bootsequenz](assets/Bootsequenz720p.mp4)
 # MATRIX LED Controller 
 
 High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
