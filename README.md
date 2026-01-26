@@ -52,7 +52,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 
 
 
- [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
+## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
   
  1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
  *   High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
@@ -60,13 +60,13 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
  *   VCore: 1.200V (Dynamic Voltage Scaling via PMU_REG_CORE 0x14)
  *   FPU:   Double Precision Hardware Floating Point Unit enabled
    
-   2. MEMORY HIERARCHY (Tightly Coupled Memory)
-      - ITCM (Instruction TCM): 64-bit Bus, 0 Wait-States.
-        -> Hält "Hot Path" Code: processLEDs(), sendOutBuffer(), readExact().
-        -> Verhindert Cache-Misses und Pipeline-Stalls bei kritischen Loops.
-        - DTCM (Data TCM): 64-bit Bus, 0 Wait-States.
-        -> Hält Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
-        -> Ermöglicht Single-Cycle Zugriff auf LED-Daten.
+##   2. MEMORY HIERARCHY (Tightly Coupled Memory)
+ *    - ITCM (Instruction TCM): 64-bit Bus, 0 Wait-States.
+      - Hält "Hot Path" Code: processLEDs(), sendOutBuffer(), readExact().
+      - Verhindert Cache-Misses und Pipeline-Stalls bei kritischen Loops.
+      - DTCM (Data TCM): 64-bit Bus, 0 Wait-States.
+      - Hält Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
+      - Ermöglicht Single-Cycle Zugriff auf LED-Daten.
    
  [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
 
