@@ -76,26 +76,26 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
  *  - Software: readExact() (ITCM) liest Block-weise in 'rgbIn' (DTCM).
  *  - Protocol: Adalight Header Check ("Ada") + Checksum/Timeout Logic.
  *  
-   STAGE 2: PROCESSING (SIMD-like Integer Math)
+ STAGE 2: PROCESSING (SIMD-like Integer Math)
  *  - Function: processLEDs() (ITCM, FASTRUN).
  *  - Input:    8-Bit RGB Array (rgbIn).
  *  - Op:       Bit-Shifting & Masking (keine Divisionen).
  *  - Scaling:  Fixed-Point Helligkeitsberechnung ((val * brightness) >> 8).
  *  - Feature:  Color Clustering (Smart Downsampling) for ESP32 Preview.
  *  - Output:   32-Bit APA102 Frames (0xFF | B | G | R) direkt in 'backBuf'.
-   
-   STAGE 3: SWAP (Atomic Transition)
+
+ STAGE 3: SWAP (Atomic Transition)
  * - Trigger:  Sobald Frame vollständig verarbeitet ist.
  * - Action:   Pointer Swap (frontBuf <-> backBuf).
  * - Cost:     Nahezu 0 CPU-Zyklen (nur Zeiger-Adressen tauschen).
    
-   STAGE 4: PRIMARY EGEST (LPSPI Output @ 16 MHz)
+ STAGE 4: PRIMARY EGEST (LPSPI Output @ 16 MHz)
  * - Hardware: Low Power SPI (LPSPI) Modul.
  * - Function: sendOutBuffer() (ITCM).
  * - Data:     Liest von 'frontBuf' (DTCM).
  * - Timing:   Asynchron zur USB-Eingabe (entkoppelt durch Buffer).
    
-   STAGE 5: SECONDARY EGEST (UART @ 4 Mbit/s)
+ STAGE 5: SECONDARY EGEST (UART @ 4 Mbit/s)
  * - Hardware: High-Speed UART (Serial1).
  * - Target:   ESP32 Web Controller (Telemetry & Preview).
  * - Data:     Cluster-Downsampled RGB + Status (Binary Protocol).
