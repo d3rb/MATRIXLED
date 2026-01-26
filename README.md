@@ -54,7 +54,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 <br>
 <br>
 
-## $\color{red}{\text{[ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]}}$**
+## $\color{red}{\text{[ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]}}$
   
  1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
  * - High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
