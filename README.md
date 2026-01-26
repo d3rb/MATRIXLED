@@ -55,57 +55,57 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 ## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
   
  1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
- *   High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
- *   Clock: 696 MHz (Overclocked via CCM registers)
- *   VCore: 1.200V (Dynamic Voltage Scaling via PMU_REG_CORE 0x14)
- *   FPU:   Double Precision Hardware Floating Point Unit enabled
+ * - High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
+ * - Clock: 696 MHz (Overclocked via CCM registers)
+ * - VCore: 1.200V (Dynamic Voltage Scaling via PMU_REG_CORE 0x14)
+ * - FPU:   Double Precision Hardware Floating Point Unit enabled
    
  2. MEMORY HIERARCHY (Tightly Coupled Memory)
- *   ITCM (Instruction TCM): 64-bit Bus, 0 Wait-States.
- *   Hält "Hot Path" Code: processLEDs(), sendOutBuffer(), readExact().
- *   Verhindert Cache-Misses und Pipeline-Stalls bei kritischen Loops.
- *   DTCM (Data TCM): 64-bit Bus, 0 Wait-States.
- *   Hält Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
- *   Ermöglicht Single-Cycle Zugriff auf LED-Daten.
+ * - ITCM (Instruction TCM): 64-bit Bus, 0 Wait-States.
+ * - Hält "Hot Path" Code: processLEDs(), sendOutBuffer(), readExact().
+ * - Verhindert Cache-Misses und Pipeline-Stalls bei kritischen Loops.
+ * - DTCM (Data TCM): 64-bit Bus, 0 Wait-States.
+ * - Hält Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
+ * - Ermöglicht Single-Cycle Zugriff auf LED-Daten.
    
- [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
+## [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
 
 
  STAGE 1: INGEST (USB High-Speed 480 Mbit/s)
- *     - Hardware: USB PHY -> Internal 512 Byte DMA Ring Buffer.
- *     - Software: readExact() (ITCM) liest Block-weise in 'rgbIn' (DTCM).
- *     - Protocol: Adalight Header Check ("Ada") + Checksum/Timeout Logic.
+ *  - Hardware: USB PHY -> Internal 512 Byte DMA Ring Buffer.
+ *  - Software: readExact() (ITCM) liest Block-weise in 'rgbIn' (DTCM).
+ *  - Protocol: Adalight Header Check ("Ada") + Checksum/Timeout Logic.
  *  
    STAGE 2: PROCESSING (SIMD-like Integer Math)
- *     - Function: processLEDs() (ITCM, FASTRUN).
- *     - Input:    8-Bit RGB Array (rgbIn).
- *     - Op:       Bit-Shifting & Masking (keine Divisionen).
- *     - Scaling:  Fixed-Point Helligkeitsberechnung ((val * brightness) >> 8).
- *     - Feature:  Color Clustering (Smart Downsampling) for ESP32 Preview.
- *     - Output:   32-Bit APA102 Frames (0xFF | B | G | R) direkt in 'backBuf'.
+ *  - Function: processLEDs() (ITCM, FASTRUN).
+ *  - Input:    8-Bit RGB Array (rgbIn).
+ *  - Op:       Bit-Shifting & Masking (keine Divisionen).
+ *  - Scaling:  Fixed-Point Helligkeitsberechnung ((val * brightness) >> 8).
+ *  - Feature:  Color Clustering (Smart Downsampling) for ESP32 Preview.
+ *  - Output:   32-Bit APA102 Frames (0xFF | B | G | R) direkt in 'backBuf'.
    
    STAGE 3: SWAP (Atomic Transition)
- *    - Trigger:  Sobald Frame vollständig verarbeitet ist.
- *    - Action:   Pointer Swap (frontBuf <-> backBuf).
- *    - Cost:     Nahezu 0 CPU-Zyklen (nur Zeiger-Adressen tauschen).
- * 
+ * - Trigger:  Sobald Frame vollständig verarbeitet ist.
+ * - Action:   Pointer Swap (frontBuf <-> backBuf).
+ * - Cost:     Nahezu 0 CPU-Zyklen (nur Zeiger-Adressen tauschen).
+   
    STAGE 4: PRIMARY EGEST (LPSPI Output @ 16 MHz)
- *    - Hardware: Low Power SPI (LPSPI) Modul.
- *    - Function: sendOutBuffer() (ITCM).
- *    - Data:     Liest von 'frontBuf' (DTCM).
- *    - Timing:   Asynchron zur USB-Eingabe (entkoppelt durch Buffer).
+ * - Hardware: Low Power SPI (LPSPI) Modul.
+ * - Function: sendOutBuffer() (ITCM).
+ * - Data:     Liest von 'frontBuf' (DTCM).
+ * - Timing:   Asynchron zur USB-Eingabe (entkoppelt durch Buffer).
    
    STAGE 5: SECONDARY EGEST (UART @ 4 Mbit/s)
- *    - Hardware: High-Speed UART (Serial1).
- *    - Target:   ESP32 Web Controller (Telemetry & Preview).
- *    - Data:     Cluster-Downsampled RGB + Status (Binary Protocol).
+ * - Hardware: High-Speed UART (Serial1).
+ * - Target:   ESP32 Web Controller (Telemetry & Preview).
+ * - Data:     Cluster-Downsampled RGB + Status (Binary Protocol).
 
- [ TELEMETRY & SUPERVISOR ]
+## [ TELEMETRY & SUPERVISOR ]
 
-  * - LPI2C (OLED): Overclocked auf 1 MHz (Fast Mode Plus) für min. Latenz.
-  * - FPS Engine:   Exponential Moving Average (EMA) Filter für glatte Anzeige.
-  * - 3D Engine:    Real-time FPU projection engine (Boot Animations).
-  * - Diagnostics:  Startup Benchmarking (I2C Latency Check).
-  * - Thermal:      Überwachung der Die-Temperatur (tempmon).
-  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
-  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
+ * - LPI2C (OLED): Overclocked auf 1 MHz (Fast Mode Plus) für min. Latenz.
+ * - FPS Engine:   Exponential Moving Average (EMA) Filter für glatte Anzeige.
+ * - 3D Engine:    Real-time FPU projection engine (Boot Animations).
+ * - Diagnostics:  Startup Benchmarking (I2C Latency Check).
+ * - Thermal:      Überwachung der Die-Temperatur (tempmon).
+ * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
+ * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
