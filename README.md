@@ -1,5 +1,5 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
-
+<video src="assets/Bootsequenz.mp4" controls="controls" style="max-width: 100%;"></video>
 # MATRIX LED Controller 
 
 High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
@@ -94,11 +94,13 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 * - Datei: `Firmware/Teensy_Matrix.hex`
 * - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
 * - jtzt sollte dein Teensy Booten und du solltest diesen Bootscreen sehen.
-https://github.com/user-attachments/assets/3f997980-c240-4e26-8483-facda8841306
-<video src="assets/Bootsequenz.mp4" controls="controls" style="max-width: 100%;"></video>
+
+ https://github.com/user-attachments/assets/3f997980-c240-4e26-8483-facda8841306
+
+
 ### 2. ESP32 flashen
 * - Benötigte Software: Esptool oder ESP Download Tool.
-* -**Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
+* - **Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
 * - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
 
 ## Setup
