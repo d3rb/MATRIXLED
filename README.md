@@ -99,7 +99,8 @@ grüße -= d3rb =-
  * - Thermal:      Überwachung der Die-Temperatur (tempmon).
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
-
+<br>
+<br>
 ## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE @ ESP32 ]
 
  1. CORE ARCHITECTURE (ESP32-D0WD) (Dual-Core Xtensa LX6)
