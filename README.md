@@ -8,8 +8,8 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 ## Features
 
 *   **Dual-Core Architektur:**
-    *   **ESP32:** Webinterface, WiFi-Management, Matrix-Regen-Berechnung.
-    *   **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+*   **ESP32:** Webinterface, WiFi-Management, Matrix-Regen-Berechnung.
+*   **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
 *   **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit.
 *   **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, und mehr.
 *   **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, z.B. Prismatik/Hyperion).
@@ -51,13 +51,12 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 
 
 
-*  Teensy 4.0
+
    
-##       HIGH-PERFORMANCE PIPELINE ARCHITECTURE 
-##       HARDWARE LAYER: NXP i.MX RT1062 (Teensy 4.0)
-
-
-   1. CORE ARCHITECTURE (Cortex-M7)
+## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
+    
+    1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
+      - High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
       - Clock: 696 MHz (Overclocked via CCM registers)
       - VCore: 1.200V (Dynamic Voltage Scaling via PMU_REG_CORE 0x14)
       - FPU:   Double Precision Hardware Floating Point Unit enabled
@@ -70,7 +69,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
         -> Hält Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
         -> Ermöglicht Single-Cycle Zugriff auf LED-Daten.
    
-   [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
+## [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
    -------------------------------------------------------------------------
    STAGE 1: INGEST (USB High-Speed 480 Mbit/s)
       - Hardware: USB PHY -> Internal 512 Byte DMA Ring Buffer.
@@ -101,7 +100,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
       - Target:   ESP32 Web Controller (Telemetry & Preview).
       - Data:     Cluster-Downsampled RGB + Status (Binary Protocol).
 
-   [ TELEMETRY & SUPERVISOR ]
+## [ TELEMETRY & SUPERVISOR ]
    -------------------------------------------------------------------------
    - LPI2C (OLED): Overclocked auf 1 MHz (Fast Mode Plus) für min. Latenz.
    - FPS Engine:   Exponential Moving Average (EMA) Filter für glatte Anzeige.
@@ -110,14 +109,3 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
    - Thermal:      Überwachung der Die-Temperatur (tempmon).
    - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
    - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
-
-
-Anleitung für PC-Nutzer:
-------------------------
-Verbinde den Teensy per USB mit dem PC.
-Öffne ein beliebiges Serial-Terminal (Arduino IDE Monitor, PuTTY, etc.).
-Stelle sicher, dass keine Ambilight-Software (Prismatik/Hyperion) läuft (damit der Port frei ist).
-Gib deine WLAN-Daten in folgendem Format ein und drücke Enter: ""w:DeinWlanName:DeinPasswort"""
-Der Teensy zeigt kurz "SENDING WIFI..." auf dem OLED.
-Der ESP32 empfängt die Daten, speichert sie und startet neu.
-Fertig! Der ESP32 ist nun im Heimnetzwerk.
