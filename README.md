@@ -93,7 +93,7 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 
 ### 2. ESP32 flashen
 * - Benötigte Software: Esptool oder ESP Download Tool.
-* -**Partitionstabelle:** `Firmware/partitions.bin` an Adresse `0x8000`
+* -**Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
 * - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
 
 ## Setup
