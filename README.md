@@ -85,19 +85,14 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 <br>
 <br>
 <br>
-## Installation
 
-Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
+## Installation
 
 ### 1. Teensy 4.0 flashen
 * - Benötigte Software: Teensy Loader
-* - Datei: `Firmware/Teensy_Matrix.hex`
+* - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 * - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
 * - jtzt sollte dein Teensy Booten und du solltest diesen Bootscreen sehen.
-
-<video src="https://github.com/d3rb/MATRIXLED/raw/main/assets/Bootsequenz.mp4" controls="controls" style="max-width: 100%;">
-</video>
-
 
 ### 2. ESP32 flashen
 * - Benötigte Software: Esptool oder ESP Download Tool.
@@ -122,13 +117,10 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 
 
 Links zu Komponenten & Software
-
-HyperHDR: https://github.com/awawa-dev/HyperHDR
-
-Teensy: https://www.pjrc.com/teensy/
-
-ESP32: https://www.espressif.com/
-
-WS2812B: https://www.worldsemi.com/
-
-Level Shifter: https://www.ti.com/
+Teensy 4.0: https://www.pjrc.com/store/teensy40.html
+Display ST7789V 240x320 (SPI): https://de.aliexpress.com/item/1005009741238384.html?gatewayAdapt=glo2deu
+DisplaySSD1306  : https://de.aliexpress.com/item/1005006141235306.html?pdp_ext_f=%7B%22order%22%3A%229070%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D 
+ESP32-WROOM-32D: https://de.aliexpress.com/item/1005007820190456.html?gatewayAdapt=glo2deu
+APA102: https://de.aliexpress.com/item/32969463242.html?gatewayAdapt=glo2deu
+Level Shifter SN74AHCT125N: https://de.aliexpress.com/item/1005010466137824.html?pdp_ext_f=%7B%22order%22%3A%2257%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D
+Taster Kailh 6x6x7.3mm : https://de.aliexpress.com/item/1005005497422200.html?gatewayAdapt=glo2deu
