@@ -1,6 +1,5 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
 
-
 # MATRIX LED Controller 
 
 High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
@@ -15,33 +14,6 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 * - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, z.B. Prismatik/Hyperion).
 * - **OLED Display:** Zeigt FPS, Systemstatus und IP-Adresse am Controller an.
 
-## Installation
-
-Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
-
-### 1. Teensy 4.0 flashen
-* - Benötigte Software: Teensy Loader
-* - Datei: `Firmware/Teensy_Matrix.hex`
-* - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
-
-### 2. ESP32 flashen
-* - Benötigte Software: Esptool oder ESP Download Tool.
-* -**Partitionstabelle:** `Firmware/partitions.bin` an Adresse `0x8000`
-* - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
-
-## Erste Schritte
-
-1.  **Hardware verbinden:** Stelle sicher, dass ESP32 und Teensy korrekt verbunden sind (RX/TX für Kommunikation, Trigger-Pin).
-2.  **WiFi Setup:**
-* - Beim ersten Start (oder nach Reset) erstellt der ESP32 einen Access Point namens **MATRIX-SETUP**.
-* - Verbinde dich mit dem WLAN.
-* - Öffne `192.168.4.1` im Browser.
-* - Gib deine WLAN-SSID und das Passwort ein.
-* - Das System startet neu und verbindet sich mit deinem Heimnetzwerk.
-3.  **LED Konfiguration:**
-*   Der Teensy lernt die Anzahl der LEDs automatisch beim ersten Kontakt mit der PC-Software (Adalight Header)
-*   oder kann manuell über das Webinterface konfiguriert werden.
-
 ## Hardware Specs
 
 *   **Controller 1:** Teensy 4.0 (übertaktet auf 696 MHz)
@@ -49,11 +21,6 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 *   **LEDs:** APA102C (SPI)
 *   **Display:** SH1106 OLED (I2C) = Teensy 4.0
 *   **Display:** ST7789V 240x320 (SPI) = ESP32 DevKit V4
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
   
@@ -112,3 +79,33 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
  * - Thermal:      Überwachung der Die-Temperatur (tempmon).
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
+<br>
+<br>
+<br>
+<br>
+## Installation
+
+Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
+
+### 1. Teensy 4.0 flashen
+* - Benötigte Software: Teensy Loader
+* - Datei: `Firmware/Teensy_Matrix.hex`
+* - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
+
+### 2. ESP32 flashen
+* - Benötigte Software: Esptool oder ESP Download Tool.
+* -**Partitionstabelle:** `Firmware/partitions.bin` an Adresse `0x8000`
+* - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
+
+## Setup
+
+1.  **Hardware verbinden:** Stelle sicher, dass ESP32 und Teensy korrekt verbunden sind (RX/TX für Kommunikation, Trigger-Pin).
+2.  **WiFi Setup:**
+* - Beim ersten Start (oder nach Reset) erstellt der ESP32 einen Access Point namens **MATRIX-SETUP**.
+* - Verbinde dich mit dem WLAN.
+* - Öffne `192.168.4.1` im Browser.
+* - Gib deine WLAN-SSID und das Passwort ein.
+* - Das System startet neu und verbindet sich mit deinem Heimnetzwerk.
+3.  **LED Konfiguration:**
+*   Der Teensy lernt die Anzahl der LEDs automatisch beim ersten Kontakt mit der PC-Software (Adalight Header)
+*   oder kann manuell über das Webinterface konfiguriert werden.
