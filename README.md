@@ -55,10 +55,10 @@ Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
  [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE Teensy 4.0 ]
   
  1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
- *       High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
- *       Clock: 696 MHz (Overclocked via CCM registers)
- *       VCore: 1.200V (Dynamic Voltage Scaling via PMU_REG_CORE 0x14)
- *       FPU:   Double Precision Hardware Floating Point Unit enabled
+ *   High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
+ *   Clock: 696 MHz (Overclocked via CCM registers)
+ *   VCore: 1.200V (Dynamic Voltage Scaling via PMU_REG_CORE 0x14)
+ *   FPU:   Double Precision Hardware Floating Point Unit enabled
    
    2. MEMORY HIERARCHY (Tightly Coupled Memory)
       - ITCM (Instruction TCM): 64-bit Bus, 0 Wait-States.
