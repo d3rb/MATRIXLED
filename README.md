@@ -10,7 +10,11 @@ Hyperion/HyperHDR/AmbiPro).
 * - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
 * - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
 * - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIX LED (noch nicht veröffentlicht)
+<br>
 
+![Debug.Menü](assets/Debug.Screen.jpg)
+
+<br>
 * - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
 * - **Effekte:** "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm.
@@ -231,3 +235,8 @@ grüße -= d3rb =-
 *   **APA102:** https://de.aliexpress.com/item/32969463242.html
 *   **Level Shifter SN74AHCT125N:** https://de.aliexpress.com/item/1005010466137824.html
 *   **Taster Kailh 6x6x7.3mm:** https://de.aliexpress.com/item/1005005497422200.html
+
+
+
+!!!!!!!!!!!!!! kontakt !!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!! spenden Button !!!!!!!!!!!!
