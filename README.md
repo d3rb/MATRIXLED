@@ -1,5 +1,22 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
-<video src="assets/Bootsequenz.mp4" controls="controls" style="max-width: 100%;"></video>
+![max.FPS.Wallpaper](assets/max.FPS.jpg)
+# Vorwort
+
+Mich haben Computer und technische Geräte schon immer fasziniert. Das begann bereits in meiner Kindheit, als mein Vater einen Commodore Plus/4 besaß. Von dort aus entwickelte sich meine Reise weiter – über den Amiga 1200, einen 486DX2 und viele weitere Systeme bis heute.
+
+Technik war für mich nie nur ein Werkzeug, sondern etwas, das man verstehen, erkunden und verbessern kann.
+
+Die ersten Ambilight-Systeme, die ich selbst besessen habe, waren noch sehr einfach: drei LED-Leisten, nicht adressierbar, physisch nur wenige LEDs – weit entfernt von dem, was heute möglich ist. Doch LEDs haben mich schon immer begeistert, vor allem wegen ihrer Farben, Dynamik und der Möglichkeiten, Atmosphäre zu erzeugen.
+
+Aus dieser Begeisterung heraus entstand dieses Projekt. Mein Ziel war es nicht nur, ein Ambilight zu bauen, das gut aussieht, sondern eines, das messbar, erklärbar und technisch nachvollziehbar ist – mit klaren Antworten auf Fragen wie:
+"Wie schnell ist es wirklich? Wo liegen die Grenzen? Und wie viel Performance bleibt oft ungenutzt?"
+
+Der Name MATRIX LED entstand eher intuitiv. Ich fand ihn einfach passend – und er lässt Raum für Fantasie. Wie der Film Matrix steht er für Technik, Tiefe und die Idee, hinter die Oberfläche zu schauen.
+
+Was als kleines Experiment begann, ist mit der Zeit gewachsen. Nicht aus dem Wunsch nach Komplexität, sondern aus Neugier – und aus dem Spaß daran, Dinge weiterzudenken, zu optimieren und neu zu gestalten. Ich hoffe euch gefällt mein Projekt!!
+
+grüße -= d3rb =-
+
 # MATRIX LED Controller 
 
 High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
@@ -86,13 +103,26 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 <br>
 <br>
 
-## Installation
+## [ Installation ]
 
 ### 1. Teensy 4.0 flashen
 * - Benötigte Software: Teensy Loader
 * - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 * - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
-* - jtzt sollte dein Teensy Booten und du solltest diesen Bootscreen sehen.
+* - jetzt sollte dein Teensy Booten und du solltest diesen Bootscreen sehen.
+
+ 
+<div align="left">
+  <table border="0">
+    <tr>
+      <td width="300">
+        <video src="https://github.com/user-attachments/assets/aa9a625d-cd0f-417a-9fad-41ca45eee43e" autoplay loop muted playsinline>
+        </video>
+      </td>
+    </tr>
+  </table>
+</div>
+
 
 ### 2. ESP32 flashen
 * - Benötigte Software: Esptool oder ESP Download Tool.
@@ -118,9 +148,15 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 Links zu Komponenten & Software
 Teensy 4.0: https://www.pjrc.com/store/teensy40.html
+
 Display ST7789V 240x320 (SPI): https://de.aliexpress.com/item/1005009741238384.html
+
 DisplaySSD1306  : https://de.aliexpress.com/item/1005006141235306.html
+
 ESP32-WROOM-32D: https://de.aliexpress.com/item/1005007820190456.html
+
 APA102: https://de.aliexpress.com/item/32969463242.html
+
 Level Shifter SN74AHCT125N: https://de.aliexpress.com/item/1005010466137824.html
+
 Taster Kailh 6x6x7.3mm : https://de.aliexpress.com/item/1005005497422200.html
