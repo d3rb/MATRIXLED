@@ -6,7 +6,6 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 # Features
 
-Hyperion/HyperHDR/AmbiPro).
 * - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
 * - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
 * - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIX LED (noch nicht veröffentlicht)
@@ -19,7 +18,7 @@ Debug Menü
 ##
 
 <br>
-FPS Counter
+[Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
 
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 
