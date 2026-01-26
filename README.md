@@ -1,5 +1,19 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
 
+# MATRIX LED Controller 
+
+High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
+
+# Features
+
+* - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
+* - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit.
+* - **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, und mehr.
+* - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, z.B. Prismatik/Hyperion).
+* - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+* - **OLED Display:** FPS Counter, Reale FPS Berechnung, wieviele FPS sind möglich anhand der der Daten die die der Controller empfängt,
+    ähnlich der Frameraten Berechnung von Grafikarten, wie viele FPS schafft meine Hardware wirklich.
+
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 # Vorwort
 
@@ -18,28 +32,14 @@ Was als kleines Experiment begann, ist mit der Zeit gewachsen. Nicht aus dem Wun
 
 grüße -= d3rb =-
 
-# MATRIX LED Controller 
-
-High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
-
-## Features
-
-* - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
-* - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit.
-* - **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, und mehr.
-* - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, z.B. Prismatik/Hyperion).
-* - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
-* - **OLED Display:** FPS Counter, Reale FPS Berechnung, wieviele FPS sind möglich anhand der der Daten die die der Controller empfängt,
-    ähnlich der Frameraten Berechnung von Grafikarten, wie viele FPS schafft meine Hardware wirklich.
-
 ## Hardware Specs
 
-*   **Controller 1:** Teensy 4.0 @ 696 MHz "Overclocked"
-*   **LEDs:** APA102C (SPI) @ 16 MHZ
-*   **Display:** SH1106 OLED (I2C) @ 1 MHz
+* - **Controller 1:** Teensy 4.0 @ 696 MHz "Overclocked"
+* - **LEDs:** APA102C (SPI) @ 16 MHZ
+* - **Display:** SH1106 OLED (I2C) @ 1 MHz
 
-*   **Controller 2:** ESP32 DevKit V4 @ 240 MHZ EnergySaver deaktiviert
-*   **Display:** ST7789V 240x320 (SPI) @ 26.6 MHZ
+* - **Controller 2:** ESP32 DevKit V4 @ DualCore 240 MHZ EnergySaver deaktiviert
+* - **Display:** ST7789V 240x320 (SPI) @ 26.6 MHZ
 
 ![Taster](assets/Taster.jpg)
 
@@ -106,7 +106,7 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 ## [ Installation ]
 
-### 1. Teensy 4.0 flashen
+## 1. Teensy 4.0 flashen
 * - Benötigte Software: Teensy Loader
 * - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 * - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
@@ -125,7 +125,7 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 </div>
 
 
-### 2. ESP32 flashen
+## 2. ESP32 flashen
 * - Benötigte Software: Esptool oder ESP Download Tool.
 * - **Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
 * - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
