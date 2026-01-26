@@ -6,12 +6,15 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 # Features
 
+Hyperion/HyperHDR/AmbiPro).
+* - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
+* - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIX LED (noch nicht veröffentlicht)
+
 * - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-* - **Effekte:** Matrix Rain (3D/2D), Fire, Plasma, Rainbow, uvm.
-* - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit Prismatik/Hyperion/HyperHDR/AmbiPro).
-* - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
-* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben
+* - **Effekte:** "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm.
+* - **TFT Display** MAtrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 
@@ -176,7 +179,7 @@ grüße -= d3rb =-
 * - Benötigte Software: Teensy Loader
 * - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 * - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
-* - jetzt sollte dein Teensy Booten und du solltest diesen Bootscreen sehen.
+* - jetzt sollte dein Teensy Booten, du solltest jetzt diesen Bootscreen sehen und deine LEDs sollten nach dem Booten leuchten (LED Test) steht im Display.
 
  
 <div align="left">
