@@ -13,9 +13,11 @@ Hyperion/HyperHDR/AmbiPro).
 <br>
 
 ![Debug.Menü](assets/Debug.Screen.jpg)
-
+Debug Menü 
 <br>
 
+<br>
+FPS Counter
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 
 * - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
