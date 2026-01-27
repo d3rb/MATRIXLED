@@ -12,7 +12,7 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 <br>
 
 ![Debug.Menü](assets/Debug.Screen.jpg)
-Debug Menü 
+[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
 <br>
 
 ##
