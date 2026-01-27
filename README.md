@@ -321,3 +321,7 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 Gefällt dir das Projekt?
 *   Lass einen ⭐ **Star** auf GitHub da!
 *   Melde Fehler unter **Issues**.
+
+### ☕ Support
+Wenn du meine Arbeit unterstützen möchtest:
+*   [PayPal Spende](https://www.paypal.com/donate/?hosted_button_id=9NSRVUTJ6Z2HL)
