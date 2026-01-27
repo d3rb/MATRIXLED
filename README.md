@@ -252,8 +252,15 @@ Beim ersten Start (oder nach einem Reset) findet der ESP32 keine gespeicherten W
 1.  Verbinde dein Handy oder PC mit dem WLAN **`MATRIX-SETUP`**.
 2.  Öffne den Browser und gehe auf `http://192.168.4.1`.
 3.  Gib deine **WLAN-SSID** und das **Passwort** deines Heimnetzwerks ein.
+
+![Wifi.Setup.Browser](assets/Wifi.Setup.Browser.jpg)
+
 4.  Klicke auf "VERBINDEN".
 5.  Das System speichert die Daten, startet neu und verbindet sich automatisch mit deinem Heimnetzwerk.
+
+<br>
+
+![Setup.Screen.+.Debug](assets/Setup.Screen.+.Debug.jpg)
 
 ### 3. Normaler Start
 Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die Matrix-Oberfläche.
@@ -273,16 +280,12 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 *   **Benutzername:** `admin`
 *   **Passwort:** `matrix`
 
+<br>
+Setup.Screen.+.Debug.[R/Y/G/C/B/M/K]
 
 ![MATRIXLED.Controller](assets/MATRIX.LED.Controller.jpg)
 
 <br>
-
-## 5.  **LED Konfiguration:**
-
-*   Der Teensy lernt die Anzahl der LEDs automatisch beim ersten Kontakt mit der PC-Software (Adalight Header)
-*   oder kann manuell über das Webinterface konfiguriert werden.
-
 
 ## Links zu Komponenten & Software
 *   **Teensy 4.0:**                    https://www.pjrc.com/store/teensy40.html
