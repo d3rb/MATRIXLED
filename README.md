@@ -24,13 +24,23 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 * - **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-* - **Effekte:**       "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm.
+* - **Effekte:**       "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
 * - **TFT Display**    MAtrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
 <br>
 <br>
 
-!!!!!!!!!Platzhalter Bonus Print files upload .stl files !!!!!!!!!!!!!
+## [ Downloads & Extras ]
+
+### 🌐 Web Interface (High-Res Version)
+Da das Hintergrundbild (3.3 MB) zu groß für den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
+*   Einfach die `.html` Datei lokal am PC/Handy öffnen.
+*   Die IP-Adresse des ESP32 kann in der lokalen Version konfiguriert werden.
+*   **Download:** Siehe **Releases** (rechts in der Sidebar).
+
+### 🖨️ 3D Druck (.stl)
+Gehäuse-Dateien für den Controller und die Anschlüsse.
+*   *(Dateien folgen in Kürze / Siehe Ordner `STL`)*
 
 <br>
 
@@ -195,7 +205,20 @@ grüße -= d3rb =-
 * - Benötigte Software: Teensy Loader
 * - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
 * - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
-* - jetzt sollte dein Teensy Booten, du solltest jetzt diesen Bootscreen sehen und deine LEDs sollten nach dem Booten leuchten (LED Test) steht im Display.
+* - jetzt sollte dein Teensy Booten, du solltest jetzt den "Learning Mode" Screen sehen, weil das "Magic Byte" noch nicht vorhanden ist.
+* - Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR öffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy übertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
+* - Der Teensy Boote jetzt durch, deine LEDs sollten nach dem Booten leuchten, "LED Test" steht im Display.
+* - Sollte etwas schief gegangen sein, kannst du ein "Rest" durchführen, oder konfigurierst die LEDs später im Webinterface.
+
+
+* - Reset: Per Taster (Eingebaut)
+
+* - Trenne den Teensy vom Strom (USB raus).
+* - Halte den Taster (an Pin 2) gedrückt.
+* - Stecke USB wieder ein (während du gedrückt hältst).
+* - Auf dem Display sollte kurz "RESET CONFIG..." erscheinen.
+* - Lass den Taster los -> Der Teensy startet jetzt im Learning Mode.
+
 
  
 <table width="100%">
@@ -215,16 +238,41 @@ grüße -= d3rb =-
 * - **Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
 * - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
 
-## 4. Setup
+## 4. Setup & Konfiguration
 
-1.  **Hardware verbinden:** Stelle sicher, dass ESP32 und Teensy korrekt verbunden sind (siehe Tabelle oben).
-2.  **WiFi Setup:**
-* - Beim ersten Start (oder nach Reset) erstellt der ESP32 einen Access Point namens **MATRIX-SETUP**.
-* - Verbinde dich mit dem WLAN.
-* - Öffne `192.168.4.1` im Browser.
-* - Gib deine WLAN-SSID und das Passwort ein.
-* - Das System startet neu und verbindet sich mit deinem Heimnetzwerk.
-    jetzt solltest du diese Website sehen.
+### 1. Hardware verbinden
+Stelle sicher, dass ESP32 und Teensy korrekt miteinander verbunden sind (siehe Tabelle oben: RX/TX, Sync, GND).
+
+### 2. Erster Start (WiFi Einrichtung)
+Beim ersten Start (oder nach einem Reset) findet der ESP32 keine gespeicherten WLAN-Daten.
+*   Der ESP32 startet einen eigenen Access Point: **`MATRIX-SETUP`**.
+*   Auf dem Display erscheint: **"SETUP MODE"** und die IP **`192.168.4.1`**.
+
+**Schritte:**
+1.  Verbinde dein Handy oder PC mit dem WLAN **`MATRIX-SETUP`**.
+2.  Öffne den Browser und gehe auf `http://192.168.4.1`.
+3.  Gib deine **WLAN-SSID** und das **Passwort** deines Heimnetzwerks ein.
+4.  Klicke auf "VERBINDEN".
+5.  Das System speichert die Daten, startet neu und verbindet sich automatisch mit deinem Heimnetzwerk.
+
+### 3. Normaler Start
+Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die Matrix-Oberfläche.
+
+### 4. WLAN ändern / Reset
+Um die WLAN-Daten zu löschen und den Setup-Modus erneut zu starten:
+
+*   **Methode A (Hardware):**
+    Halte beim Einstecken des Stroms den **BOOT-Button** auf dem ESP32 gedrückt.
+    Das Display wird rot ("RESET WIFI..."), die Daten werden gelöscht und der AP-Modus startet.
+
+*   **Methode B (Software):**
+    Rufe im Browser die URL `http://<DEINE-ESP-IP>/reset_wifi` auf.
+
+### 5. Zugangsdaten (OTA Update)
+Für Firmware-Updates über das Webinterface (`/upload`):
+*   **Benutzername:** `admin`
+*   **Passwort:** `matrix`
+
 
 ![MATRIXLED.Controller](assets/MATRIX.LED.Controller.jpg)
 
@@ -246,6 +294,8 @@ grüße -= d3rb =-
 *   **Taster Kailh 6x6x7.3mm:**        https://de.aliexpress.com/item/1005005497422200.html
 
 
-
-!!!!!!!!!!!!!! kontakt !!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!! spenden Button !!!!!!!!!!!!
+<br>
+## Support & Kontakt
+Gefällt dir das Projekt?
+*   Lass einen ⭐ **Star** auf GitHub da!
+*   Melde Fehler unter **Issues**.
