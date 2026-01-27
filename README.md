@@ -300,7 +300,7 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 | **1x Klick (im Betrieb)** | Ändert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
 
 <br>
-Setup.Screen.+.Debug.[R/Y/G/C/B/M/K]
+[Webinterface]
 
 ![MATRIXLED.Controller](assets/MATRIX.LED.Controller.jpg)
 
