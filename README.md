@@ -6,9 +6,9 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 # Features
 
-* - **Teensy 4.0:** High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+* - **Teensy 4.0:**   High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
 * - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
-* - **Ambilight:** Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIX LED (noch nicht veröffentlicht)
+* - **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIX LED (noch nicht veröffentlicht)
 <br>
 
 ![Debug.Menü](assets/Debug.Screen.jpg)
@@ -22,10 +22,10 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 
-* - **ESP32:** Webinterface, WiFi-Management, Effekt-Berechnung.
+* - **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-* - **Effekte:** "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm.
-* - **TFT Display** MAtrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
+* - **Effekte:**       "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm.
+* - **TFT Display**    MAtrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
 <br>
 <br>
@@ -54,11 +54,11 @@ grüße -= d3rb =-
 ## Hardware Specs
 
 * - **Controller 1:** Teensy 4.0 @ 696 MHz "Overclocked"
-* - **LEDs:** APA102C (SPI) @ 16 MHZ
-* - **Display:** SH1106 OLED (I2C) @ 1 MHz
+* - **LEDs:**         APA102C (SPI) @ 16 MHZ
+* - **Display:**      SH1106 OLED (I2C) @ 1 MHz
 
 * - **Controller 2:** ESP32 DevKit V4 @ DualCore 240 MHZ EnergySaver deaktiviert
-* - **Display:** ST7789V 240x320 (SPI) @ 26.6 MHZ
+* - **Display:**      ST7789V 240x320 (SPI) @ 26.6 MHZ
 
 ![Taster](assets/Taster.jpg)
 
@@ -237,13 +237,13 @@ grüße -= d3rb =-
 
 
 ## Links zu Komponenten & Software
-*   **Teensy 4.0:** https://www.pjrc.com/store/teensy40.html
+*   **Teensy 4.0:**                    https://www.pjrc.com/store/teensy40.html
 *   **Display ST7789V 240x320 (SPI):** https://de.aliexpress.com/item/1005009741238384.html
-*   **Display SSD1306:** https://de.aliexpress.com/item/1005006141235306.html
-*   **ESP32-WROOM-32D:** https://de.aliexpress.com/item/1005007820190456.html
-*   **APA102:** https://de.aliexpress.com/item/32969463242.html
-*   **Level Shifter SN74AHCT125N:** https://de.aliexpress.com/item/1005010466137824.html
-*   **Taster Kailh 6x6x7.3mm:** https://de.aliexpress.com/item/1005005497422200.html
+*   **Display SSD1306:**               https://de.aliexpress.com/item/1005006141235306.html
+*   **ESP32-WROOM-32D:**               https://de.aliexpress.com/item/1005007820190456.html
+*   **APA102:**                        https://de.aliexpress.com/item/32969463242.html
+*   **Level Shifter SN74AHCT125N:**    https://de.aliexpress.com/item/1005010466137824.html
+*   **Taster Kailh 6x6x7.3mm:**        https://de.aliexpress.com/item/1005005497422200.html
 
 
 
