@@ -289,14 +289,14 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 | **1x Klick** | Startet den **LED-Selbsttest** (Knight-Rider-Effekt). |
 | **2x Klick** | Schaltet die **globale Helligkeit** um (100% → 50% → 15% → 100%). |
 | **5x Klick** | Öffnet das **Debug-Menü** auf dem OLED-Display. |
-| **Lang gedrückt (&gt;1s)** | Schaltet das OLED-Display an/aus (**Stealth Mode**). |
+| **Lang gedrückt (>1s)** | Schaltet das OLED-Display an/aus (**Stealth Mode**). |
 | **Im Debug-Menü: 1x Klick** | Blättert zur nächsten Seite. |
 | **Im Debug-Menü: Lang gedrückt** | Verlässt das Debug-Menü. |
 
 ### ESP32 (BOOT-Taster auf dem Board)
 | Aktion | Funktion |
 | :--- | :--- |
-| **Beim Start gedrückt halten** | **WLAN-Reset:** Löscht die gespeicherten WLAN-Daten (siehe Setup). |
+| **Beim Start (1.5s Fenster)** | **WLAN-Reset:** Löscht die gespeicherten WLAN-Daten (siehe Setup). |
 | **1x Klick (im Betrieb)** | Ändert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
 
 <br>
