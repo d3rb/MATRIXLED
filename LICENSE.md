@@ -1,6 +1,6 @@
 # Non-Commercial License
 
-Copyright (c) 2026 d3rb
+Copyright (c) 2026 Enrico Herrmann
 
 ### 1. Private Use
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software, firmware (.hex/.bin), and associated documentation files (the "Software"), to use, copy, modify, and distribute the Software for **private, non-commercial purposes only**.
