@@ -204,30 +204,29 @@ grüße -= d3rb =-
 
 * - Benötigte Software: Teensy Loader
 * - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
-* - Verbinde den Teensy per USB, drücke den Reset-Knopf am Teensy und lade die .hex Datei hoch.
+* - Verbinde den Teensy per USB, drücke den **weißen Programmier-Knopf** auf dem Teensy und lade die .hex Datei hoch.
 * - jetzt sollte dein Teensy Booten, du solltest jetzt den "Learning Mode" Screen sehen, weil das "Magic Byte" noch nicht vorhanden ist.
 * - Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR öffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy übertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
 * - Der Teensy Boote jetzt durch, deine LEDs sollten nach dem Booten leuchten, "LED Test" steht im Display.
 * - Sollte etwas schief gegangen sein, kannst du ein "Rest" durchführen, oder konfigurierst die LEDs später im Webinterface.
 
 
-* - Reset: Per Taster (Eingebaut)
+* - **Reset der Konfiguration:** Per externem Taster (Pin 2)
 
 * - Trenne den Teensy vom Strom (USB raus).
-* - Halte den Taster (an Pin 2) gedrückt.
+* - Halte den **externen Taster** (an Pin 2) gedrückt.
 * - Stecke USB wieder ein (während du gedrückt hältst).
 * - Auf dem Display sollte kurz "RESET CONFIG..." erscheinen.
 * - Lass den Taster los -> Der Teensy startet jetzt im Learning Mode.
-
 
  
 <table width="100%">
   <tr>
     <td width="50%" align="center">
-      <video src="https://github.com/user-attachments/assets/aa9a625d-cd0f-417a-9fad-41ca45eee43e" autoplay loop muted playsinline width="100%"></video>
+      <video src="https://github.com/user-attachments/assets/e9165aa0-0261-4dd2-9a13-92a1aac94c6b" autoplay loop muted playsinline width="100%"></video>
     </td>
     <td width="50%" align="center">
-      <video src="https://github.com/user-attachments/assets/aa9a625d-cd0f-417a-9fad-41ca45eee43e" autoplay loop muted playsinline width="100%"></video>
+      <video src="https://github.com/user-attachments/assets/cbba1fce-c0b9-42b0-bc78-3b1bd68267d4" autoplay loop muted playsinline width="100%"></video>
     </td>
   </tr>
 </table>
@@ -269,8 +268,9 @@ Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit d
 Um die WLAN-Daten zu löschen und den Setup-Modus erneut zu starten:
 
 *   **Methode A (Hardware):**
-    Halte beim Einstecken des Stroms den **BOOT-Button** auf dem ESP32 gedrückt.
-    Das Display wird rot ("RESET WIFI..."), die Daten werden gelöscht und der AP-Modus startet.
+    1.  Schalte den ESP32 ein.
+    2.  Innerhalb der ersten **1.5 Sekunden** (während der Boot-Text "Hold BOOT to Reset..." sichtbar ist), halte den **BOOT-Button** gedrückt.
+    3.  Das Display wird rot ("RESET WIFI..."), die Daten werden gelöscht und das Gerät startet im AP-Modus neu.
 
 *   **Methode B (Software):**
     Rufe im Browser die URL `http://<DEINE-ESP-IP>/reset_wifi` auf.
@@ -279,6 +279,25 @@ Um die WLAN-Daten zu löschen und den Setup-Modus erneut zu starten:
 Für Firmware-Updates über das Webinterface (`/upload`):
 *   **Benutzername:** `admin`
 *   **Passwort:** `matrix`
+
+## 5. Tastenbelegung / Button Functions
+
+### Teensy 4.0 (Externer Taster an Pin 2)
+| Aktion | Funktion |
+| :--- | :--- |
+| **Beim Start gedrückt halten** | **Reset der Konfiguration:** Löscht die gespeicherte LED-Anzahl und andere Einstellungen. Der Teensy startet im "Learning Mode". |
+| **1x Klick** | Startet den **LED-Selbsttest** (Knight-Rider-Effekt). |
+| **2x Klick** | Schaltet die **globale Helligkeit** um (100% → 50% → 15% → 100%). |
+| **5x Klick** | Öffnet das **Debug-Menü** auf dem OLED-Display. |
+| **Lang gedrückt (&gt;1s)** | Schaltet das OLED-Display an/aus (**Stealth Mode**). |
+| **Im Debug-Menü: 1x Klick** | Blättert zur nächsten Seite. |
+| **Im Debug-Menü: Lang gedrückt** | Verlässt das Debug-Menü. |
+
+### ESP32 (BOOT-Taster auf dem Board)
+| Aktion | Funktion |
+| :--- | :--- |
+| **Beim Start gedrückt halten** | **WLAN-Reset:** Löscht die gespeicherten WLAN-Daten (siehe Setup). |
+| **1x Klick (im Betrieb)** | Ändert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
 
 <br>
 Setup.Screen.+.Debug.[R/Y/G/C/B/M/K]
