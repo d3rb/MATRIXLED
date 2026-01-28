@@ -11,16 +11,19 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 * - **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIX LED (noch nicht veröffentlicht)
 <br>
 
-![Debug.Menü](assets/Debug.Screen.jpg)
-[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
+[Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
+
+![max.FPS.Wallpaper](assets/max.FPS.jpg)
+
 <br>
 
 ##
 
 <br>
-[Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
 
-![max.FPS.Wallpaper](assets/max.FPS.jpg)
+![Debug.Menü](assets/Debug.Screen.jpg)
+
+[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
 
 * - **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
