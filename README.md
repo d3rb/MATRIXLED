@@ -129,13 +129,10 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
 
-## Benchmark-Disclaimer (WICHTIG)
-
- * - FPS-Werte beschreiben den **internen Durchsatz**, nicht die sichtbare Bildrate.
- * - Überabtastung dient Messung & Verifikation – nicht Darstellung.
-
 ## BENCHMARK DISCLAIMER MATRIX LED
 
+> * FPS-Werte beschreiben den **internen Durchsatz**, nicht die sichtbare Bildrate.
+> * Überabtastung dient Messung & Verifikation – nicht Darstellung.
 > * Dieses Projekt zeigt intern gemessene Performance-Werte (FPS), die sich auf den reinen Daten- und LED-Pipeline-Durchsatz beziehen.
 
 ## WICHTIG:
