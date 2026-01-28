@@ -50,7 +50,7 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 ## [ Downloads & Extras ]
 
 ### 🌐 Web Interface (High-Res Version)
-Da das Hintergrundbild (3.3 MB) zu groß für den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
+Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
 *   Einfach die `.html` Datei lokal am PC/Handy öffnen.
 *   Die IP-Adresse des ESP32 kann in der lokalen Version konfiguriert werden.
 *   **Download:** Siehe **Releases** (rechts in der Sidebar).
@@ -236,7 +236,6 @@ Beispiel:
 * - Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR öffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy übertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
 * - Der Teensy Boote jetzt durch, deine LEDs sollten nach dem Booten leuchten, "LED Test" steht im Display.
 * - Sollte etwas schief gegangen sein, kannst du ein "Rest" durchführen, oder konfigurierst die LEDs später im Webinterface.
-
 
 * - **Reset der Konfiguration:** Per externem Taster (Pin 2)
 
