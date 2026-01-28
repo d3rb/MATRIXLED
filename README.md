@@ -1,6 +1,6 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
 
-# MATRIX LED Controller 
+# [MATRIX LED Controller] - "Highspeed Ambilight & WebUi"
 
 High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
 
