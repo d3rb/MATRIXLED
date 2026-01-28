@@ -14,13 +14,11 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 [Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
 
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
-
 <br>
 
 ##
 
 <br>
-
 [Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
 
 ![Debug.Menü](assets/Debug.Screen.jpg)
