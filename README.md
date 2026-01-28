@@ -2,7 +2,22 @@
 
 # [MATRIX LED] - "Highspeed Ambilight & WebUi"
 
-High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effekte) und einem Teensy 4.0 (LED Treiber & USB Interface).
+## Einleitung
+MATRIX LED ist ein High-Performance Ambilight-Projekt mit dem klaren Fokus auf **maximale Geschwindigkeit, minimale Latenz und vollständige Messbarkeit**.
+Dieses Projekt ist nicht als weiteres „Ambilight für den Alltag“ entstanden, sondern aus der Frage heraus:
+
+> *Wie schnell können adressierbare LEDs wirklich angesteuert werden – wenn man nichts künstlich limitiert?*
+
+## Projektbeschreibung
+MATRIX LED kombiniert zwei Welten:
+- **Teensy 4.x** als extrem schneller, deterministischer LED-Controller
+- **ESP32** als Steuer-, UI- und Konfigurations-Einheit (Webserver + Display)
+- Der kritische Datenpfad (PC → LEDs) ist **bewusst frei von WLAN, TCP/IP oder Betriebssystem-Jitter** gehalten.
+- Der ESP32 übernimmt ausschließlich Komfort- und Kontrollfunktionen.
+
+## Nerd Stuff – Pipeline (Kurzfassung)
+PC → USB → Teensy (DMA) → LEDs  
+ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 # Features
 
@@ -130,6 +145,12 @@ grüße -= d3rb =-
  * - Thermal:      Überwachung der Die-Temperatur (tempmon).
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
+
+## Benchmark-Disclaimer (WICHTIG)
+
+ * - FPS-Werte beschreiben den **internen Durchsatz**, nicht die sichtbare Bildrate.
+ * - Überabtastung dient Messung & Verifikation – nicht Darstellung.
+
 
 <br>
 <br>
@@ -302,7 +323,7 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 | **1x Klick (im Betrieb)** | Ändert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
 
 <br>
-[Webinterface]
+[WebUi]
 
 ![MATRIXLED.Controller](assets/MATRIX.LED.Controller.jpg)
 
