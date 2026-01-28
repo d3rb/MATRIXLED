@@ -321,7 +321,7 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 *   **Level Shifter SN74AHCT125N:**    https://de.aliexpress.com/item/1005010466137824.html
 *   **Taster Kailh 6x6x7.3mm:**        https://de.aliexpress.com/item/1005005497422200.html
 
-# AboutME
+## AboutME
 
 Mich haben Computer und technische Geräte schon immer fasziniert. Das begann bereits in meiner Kindheit, als mein Vater einen Commodore Plus/4 besaß. Von dort aus entwickelte sich meine Reise weiter – über den Amiga 1200, einen 486DX2 und viele weitere Systeme bis heute.
 
