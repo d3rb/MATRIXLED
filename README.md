@@ -348,3 +348,6 @@ Gefällt dir das Projekt?
 ### ☕ Support
 Wenn du meine Arbeit unterstützen möchtest:
 *   [PayPal Spende](https://www.paypal.com/donate/?hosted_button_id=9NSRVUTJ6Z2HL)
+
+## Lizenz
+Binary-only Distribution.
