@@ -134,6 +134,31 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
  * - FPS-Werte beschreiben den **internen Durchsatz**, nicht die sichtbare Bildrate.
  * - Überabtastung dient Messung & Verifikation – nicht Darstellung.
 
+## BENCHMARK DISCLAIMER MATRIX LED
+
+> * Dieses Projekt zeigt intern gemessene Performance-Werte (FPS), die sich auf den reinen Daten- und LED-Pipeline-Durchsatz beziehen.
+
+## WICHTIG:
+- Die angezeigten FPS sind keine sichtbaren Bildwiederholraten.
+- Sie sind unabhängig von der Monitor-Refresh-Rate (z.B. 60 Hz / 120 Hz).
+- Sie stellen dar, wie schnell Daten verarbeitet, übertragen und an die LEDs ausgegeben werden können.
+
+Beispiel:
+* - Ein Monitor mit 120 Hz kann maximal 120 unterschiedliche Frames pro Sekunde anzeigen.
+* - Die MATRIX LED Pipeline kann jedoch deutlich mehr Frames intern verarbeiten.
+* - Diese überabtastung dient der Messung von:
+* - maximalem Datendurchsatz
+* - Latenz
+* - Stabilität
+* - Reserven der Hardware
+
+* - Die hohen FPS-Werte sind somit:
+* - technisch korrekt
+* - reproduzierbar
+* - aber nicht direkt sichtbar
+
+* - Dieses Projekt ist bewusst als Performance- und Analyse-Projekt konzipiert,
+* - nicht als Vergleich sichtbarer Bildraten.
 
 <br>
 <br>
@@ -179,7 +204,6 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
  * - Client:   Browser-side rendering (Canvas 2D) for Preview & Controls.
 
 <br>
-<br>
 
 # [ Installation & Setup ]
 
@@ -194,7 +218,7 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
 | **GND** | GND | GND | **WICHTIG:** Gemeinsame Masse verbinden! |
 
 ### ESP32 Display (ST7789 SPI)
-*Die Pins sind in der `platformio.ini` definiert:*
+
 *   **MOSI:** GPIO 23 / **SCLK:** GPIO 18 / **CS:** GPIO 26 / **DC:** GPIO 27 / **RST:** GPIO 4
 
 ### Teensy 4.0 Peripherie
