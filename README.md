@@ -21,9 +21,10 @@ High-Performance LED Controller System bestehend aus einem ESP32 (Web UI & Effek
 
 <br>
 
+[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
+
 ![Debug.Menü](assets/Debug.Screen.jpg)
 
-[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
 
 * - **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
