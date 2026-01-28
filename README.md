@@ -63,11 +63,11 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
 
 ## Hardware Specs
 
-* - **Controller 1:** Teensy 4.0 @ 696 MHz "Overclocked"
+* - **Controller 1:** Teensy 4.0 @ 696 MHz "Overclocked" - ich empfehle ein kleinen Kühlkörper!!
 * - **LEDs:**         APA102C (SPI) @ 16 MHZ
 * - **Display:**      SH1106 OLED (I2C) @ 1 MHz
 
-* - **Controller 2:** ESP32 DevKit V4 @ DualCore 240 MHZ EnergySaver deaktiviert
+* - **Controller 2:** ESP32 DevKit V4 @ DualCore 240 MHZ - EnergySaver deaktiviert.
 * - **Display:**      ST7789V 240x320 (SPI) @ 26.6 MHZ
 
 ![Taster](assets/Taster.jpg)
