@@ -51,7 +51,7 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 ### 🌐 Web Interface (High-Res Version)
 Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
-*   Einfach die `.html` Datei lokal am PC/Handy öffnen.
+*   Einfach die `.html` Datei lokal am PC öffnen.
 *   Die IP-Adresse des ESP32 kann in der lokalen Version konfiguriert werden.
 *   **Download:** Siehe **Releases** (rechts in der Sidebar).
 
