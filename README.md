@@ -56,6 +56,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 *   **Download:** Siehe **Releases** (rechts in der Sidebar).
 
 [![Download ZIP](https://img.shields.io/badge/Download-Source_Code_(ZIP)-00FF00?style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/archive/refs/heads/main.zip)
+[![Downloads](https://img.shields.io/github/downloads/d3rb/MATRIXLED/total?color=00FF00&style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/releases)
 [![Releases](https://img.shields.io/badge/View-Latest_Releases-blue?style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/releases)
 
 ### 🖨️ 3D Druck (.stl)
