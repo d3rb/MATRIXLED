@@ -211,6 +211,7 @@ Beispiel:
 ## 1. Verkabeln / Wiring
 
 ### Verbindung Teensy 4.0 <-> ESP32
+
 | Funktion | Teensy 4.0 Pin | ESP32 Pin | Beschreibung |
 | :--- | :--- | :--- | :--- |
 | **Serial RX** | 0 (RX1) | 17 (TX2) | Daten vom ESP zum Teensy |
@@ -219,6 +220,7 @@ Beispiel:
 | **GND** | GND | GND | **WICHTIG:** Gemeinsame Masse verbinden! |
 
 ### ESP32 Display (ST7789 SPI)
+
 | Funktion | ESP32 Pin | Display Pin |
 | :--- | :--- | :--- |
 | **VCC** | 3.3V | VCC |
@@ -230,6 +232,7 @@ Beispiel:
 | **CS** | GPIO 26 | CS |
 
 ### Teensy 4.0 Peripherie
+
 | Komponente | Pin | Anmerkung |
 | :--- | :--- | :--- |
 | **LED Data** | 11 | APA102 Data (Grün) |
