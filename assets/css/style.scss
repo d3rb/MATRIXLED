@@ -1,0 +1,13 @@
+---
+---
+@import "{{ site.theme }}";
+
+// Dieser Teil versteckt den Titel-Header auf der Webseite
+header {
+  display: none !important;
+}
+
+// Schiebt den Inhalt ein bisschen nach oben, damit kein Loch entsteht
+#content-wrapper {
+  padding-top: 20px;
+}
