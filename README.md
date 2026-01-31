@@ -219,8 +219,15 @@ Beispiel:
 | **GND** | GND | GND | **WICHTIG:** Gemeinsame Masse verbinden! |
 
 ### ESP32 Display (ST7789 SPI)
-
-*   **MOSI:** GPIO 23 / **SCLK:** GPIO 18 / **CS:** GPIO 26 / **DC:** GPIO 27 / **RST:** GPIO 4
+| Funktion | ESP32 Pin | Display Pin |
+| :--- | :--- | :--- |
+| **VCC** | 3.3V | VCC |
+| **GND** | GND | GND |
+| **SCLK** | GPIO 18 | SCL / SCK |
+| **MOSI** | GPIO 23 | SDA / MOSI |
+| **RES** | GPIO 4 | RES / RST |
+| **DC** | GPIO 27 | DC |
+| **CS** | GPIO 26 | CS |
 
 ### Teensy 4.0 Peripherie
 | Komponente | Pin | Anmerkung |
