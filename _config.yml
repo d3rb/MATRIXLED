@@ -3,5 +3,3 @@ description: "Ultra-low latency Ambilight system with Teensy 4.0 and ESP32."
 theme: jekyll-theme-hacker
 show_downloads: true
 favicon: /assets/favicon.ico
-head:
-  - <link rel="shortcut icon" type="image/x-icon" href="/MATRIXLED/assets/favicon.ico">
