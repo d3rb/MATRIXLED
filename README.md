@@ -1,6 +1,6 @@
 ![MATRIXLED.Wallpaper](assets/MATRIXLED.jpeg)
 
-# MATRIXLED
+# [MATRIXLED]
 
 > **Highspeed Ambilight & WebUI | Teensy 4.0 & ESP32 | Ultra-Low Latency**
 
