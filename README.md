@@ -1,15 +1,16 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
 
-# [MATRIX LED] - "Highspeed Ambilight & WebUi"
+# [MATRIXLED]
+> **Highspeed Ambilight & WebUI | Teensy 4.0 & ESP32 | Ultra-Low Latency**
 
 ## Einleitung
-MATRIX LED ist ein High-Performance Ambilight-Projekt mit dem klaren Fokus auf **maximale Geschwindigkeit, minimale Latenz und vollständige Messbarkeit**.
+MATRIXLED ist ein High-Performance Ambilight-Projekt mit dem klaren Fokus auf **maximale Geschwindigkeit, minimale Latenz und vollständige Messbarkeit**.
 Dieses Projekt ist nicht als weiteres „Ambilight für den Alltag“ entstanden, sondern aus der Frage heraus:
 
 > *Wie schnell können adressierbare LEDs wirklich angesteuert werden – wenn man nichts künstlich limitiert?*
 
 ## Projektbeschreibung
-MATRIX LED kombiniert zwei Welten:
+MATRIXLED kombiniert zwei Welten:
 - **Teensy 4.x** als extrem schneller, deterministischer LED-Controller
 - **ESP32** als Steuer-, UI- und Konfigurations-Einheit (Webserver + Display)
 - Der kritische Datenpfad (PC → LEDs) ist **bewusst frei von WLAN, TCP/IP oder Betriebssystem-Jitter** gehalten.
@@ -23,7 +24,7 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 * - **Teensy 4.0:**   High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
 * - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
-* - **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIX LED (noch nicht veröffentlicht)
+* - **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIXLED (noch nicht veröffentlicht)
 <br>
 
 [Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
@@ -41,8 +42,8 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 * - **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-* - **Effekte:**       "Für LED Test" -> Matrix LED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
-* - **TFT Display**    MAtrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
+* - **Effekte:**       "Für LED Test" -> MatrixLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
+* - **TFT Display**    Matrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
 <br>
 <br>
@@ -133,7 +134,7 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (20s Idle) & Deep Standby (10min Idle).
 
-## BENCHMARK DISCLAIMER MATRIX LED
+## BENCHMARK DISCLAIMER MATRIXLED
 
 > * FPS-Werte beschreiben den **internen Durchsatz**, nicht die sichtbare Bildrate.
 > * Überabtastung dient Messung & Verifikation – nicht Darstellung.
@@ -146,7 +147,7 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
 
 Beispiel:
 * - Ein Monitor mit 120 Hz kann maximal 120 unterschiedliche Frames pro Sekunde anzeigen.
-* - Die MATRIX LED Pipeline kann jedoch deutlich mehr Frames intern verarbeiten.
+* - Die MATRIXLED Pipeline kann jedoch deutlich mehr Frames intern verarbeiten.
 * - Diese überabtastung dient der Messung von:
 * - maximalem Datendurchsatz
 * - Latenz
@@ -302,7 +303,7 @@ Beim ersten Start (oder nach einem Reset) findet der ESP32 keine gespeicherten W
 ![Setup.Screen.+.Debug](assets/Setup.Screen.+.Debug.jpg)
 
 ### 3. Normaler Start
-Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die Matrix-Oberfläche.
+Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die MatrixLED-Oberfläche.
 
 ### 4. WLAN ändern / Reset
 Um die WLAN-Daten zu löschen und den Setup-Modus erneut zu starten:
@@ -366,7 +367,7 @@ Die ersten Ambilight-Systeme, die ich selbst besessen habe, waren noch sehr einf
 Aus dieser Begeisterung heraus entstand dieses Projekt. Mein Ziel war es nicht nur, ein Ambilight zu bauen, das gut aussieht, sondern eines, das messbar, erklärbar und technisch nachvollziehbar ist – mit klaren Antworten auf Fragen wie:
 "Wie schnell ist es wirklich? Wo liegen die Grenzen? Und wie viel Performance bleibt oft ungenutzt?"
 
-Der Name MATRIX LED entstand eher intuitiv. Ich fand ihn einfach passend – und er lässt Raum für Fantasie. Wie der Film Matrix steht er für Technik, Tiefe und die Idee, hinter die Oberfläche zu schauen.
+Der Name MATRIXLED entstand eher intuitiv. Ich fand ihn einfach passend – und er lässt Raum für Fantasie. Wie der Film Matrix steht er für Technik, Tiefe und die Idee, hinter die Oberfläche zu schauen.
 
 Was als kleines Experiment begann, ist mit der Zeit gewachsen. Nicht aus dem Wunsch nach Komplexität, sondern aus Neugier – und aus dem Spaß daran, Dinge weiterzudenken, zu optimieren und neu zu gestalten. Ich hoffe euch gefällt mein Projekt!!
 
