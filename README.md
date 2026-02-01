@@ -43,7 +43,7 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 * - **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
 * - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-* - **Effekte:**       "Für LED Test" -> MatrixLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
+* - **Effekte:**       "Für LED Test" -> MATRIXLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
 * - **TFT Display**    Matrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
 <br>
