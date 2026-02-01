@@ -1,4 +1,4 @@
-![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
+![MATRIXLED.Wallpaper](assets/MATRIXLED.jpeg)
 
 # MATRIXLED
 
@@ -304,7 +304,7 @@ Beim ersten Start (oder nach einem Reset) findet der ESP32 keine gespeicherten W
 ![Setup.Screen.+.Debug](assets/Setup.Screen.+.Debug.jpg)
 
 ### 3. Normaler Start
-Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die MatrixLED-Oberfläche.
+Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die MATRIXLED-Oberfläche.
 
 ### 4. WLAN ändern / Reset
 Um die WLAN-Daten zu löschen und den Setup-Modus erneut zu starten:
@@ -344,7 +344,7 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 <br>
 [WebUi]
 
-![MATRIXLED.Controller](assets/MATRIX.LED.Controller.jpg)
+![MATRIXLED.Controller](assets/MATRIXLED.WebUI.jpg)
 
 <br>
 
