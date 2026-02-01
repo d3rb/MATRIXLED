@@ -1,6 +1,7 @@
 ![MATRIXLED.Wallpaper](assets/MATRIX.LED.jpeg)
 
 # [MATRIXLED]
+![Stars](https://img.shields.io/github/stars/d3rb/MATRIXLED?color=00FF00&style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/stargazers)
 > **Highspeed Ambilight & WebUI | Teensy 4.0 & ESP32 | Ultra-Low Latency**
 
 ## Einleitung
