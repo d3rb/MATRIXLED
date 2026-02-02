@@ -23,9 +23,9 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 # Features
 
-* - **Teensy 4.0:**   High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
-* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
-* - **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIXLED (noch nicht veröffentlicht)
+- **Teensy 4.0:**   High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+- **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
+- **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIXLED (noch nicht veröffentlicht)
 <br>
 
 [Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
@@ -41,10 +41,10 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 ![Debug.Menü](assets/Debug.Screen.jpg)
 
 
-* - **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
-* - **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-* - **Effekte:**       "Für LED Test" -> MATRIXLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
-* - **TFT Display**    Matrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
+- **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
+- **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
+- **Effekte:**       "Für LED Test" -> MATRIXLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
+- **TFT Display**    Matrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
 <br>
 <br>
@@ -78,7 +78,7 @@ Gehäuse-Dateien für den Controller und die Anschlüsse.
 
 ![Taster](assets/Taster.jpg)
 
-## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE @ Teensy 4.0 ]
+## [ PIPELINE ARCHITECTURE @ Teensy 4.0 ]
   
  1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
  * - High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
@@ -166,7 +166,7 @@ Beispiel:
 <br>
 <br>
 
-## [ HIGH-PERFORMANCE PIPELINE ARCHITECTURE @ ESP32 ]
+## [ PIPELINE ARCHITECTURE @ ESP32 ]
 
  1. CORE ARCHITECTURE (ESP32-D0WD) (Dual-Core Xtensa LX6)
  * - Clock: 240 MHz (Max Performance Profile via setCpuFrequencyMhz).
