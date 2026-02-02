@@ -12,23 +12,23 @@ Dieses Projekt ist nicht als weiteres „Ambilight für den Alltag“ entstanden
 
 ## Projektbeschreibung
 MATRIXLED kombiniert zwei Welten:
-- **Teensy 4.x** als extrem schneller, deterministischer LED-Controller
-- **ESP32** als Steuer-, UI- und Konfigurations-Einheit (Webserver + Display)
-- Der kritische Datenpfad (PC → LEDs) ist **bewusst frei von WLAN, TCP/IP oder Betriebssystem-Jitter** gehalten.
-- Der ESP32 übernimmt ausschließlich Komfort- und Kontrollfunktionen.
+* - **Teensy 4.x** als extrem schneller, deterministischer LED-Controller
+* - **ESP32** als Steuer-, UI- und Konfigurations-Einheit (Webserver + Display)
+* - **Der kritische Datenpfad (PC → LEDs) ist **bewusst frei von WLAN, TCP/IP oder Betriebssystem-Jitter** gehalten.
+* - **Der ESP32 übernimmt ausschließlich Komfort- und Kontrollfunktionen.
 
 ## Nerd Stuff – Pipeline (Kurzfassung)
-PC → USB → Teensy (DMA) → LEDs  
-ESP32 → UI / Web / Display (nicht zeitkritisch)
+* - **PC → USB → Teensy (DMA) → LEDs  
+* - **ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 # Features
 
-- **Teensy 4.0:**   High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
-- **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
-- **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIXLED (noch nicht veröffentlicht)
+* - **Teensy 4.0:**   High-Speed APA102 Treiber (SPI @ 16MHz), USB Adalight Interface, OLED Status-Display.
+* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
+* - **Ambilight:**    Unterstützt PC-Synchronisation via USB (Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIXLED (noch nicht veröffentlicht)
 <br>
 
-[Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
+* - **[Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
 
 ![max.FPS.Wallpaper](assets/max.FPS.jpg)
 <br>
@@ -36,15 +36,15 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 ##
 
 <br>
-[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
+* - **[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
 
 ![Debug.Menü](assets/Debug.Screen.jpg)
 
 
-- **ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
-- **Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-- **Effekte:**       "Für LED Test" -> MATRIXLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
-- **TFT Display**    Matrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
+* - ***ESP32:**         Webinterface, WiFi-Management, Effekt-Berechnung.
+* - ***Web Interface:** Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
+* - **Effekte:**       "Für LED Test" -> MATRIXLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
+* - **TFT Display**    Matrix Regen passt sich den Farben der LEDs an (int bucketCounts[7] Teensy sortiert Farben in 7 Töpfe (R, Y, G, C, B, M, K) und nimmt den vollsten,
 
 <br>
 <br>
@@ -53,8 +53,8 @@ ESP32 → UI / Web / Display (nicht zeitkritisch)
 
 ### 🌐 Web Interface (High-Res Version)
 Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
-*   Einfach die `.html` Datei lokal am PC öffnen.
-*   Die IP-Adresse des ESP32 kann in der lokalen Version konfiguriert werden.
+* - **Einfach die `.html` Datei lokal am PC öffnen.
+* - **Die IP-Adresse des ESP32 kann in der lokalen Version konfiguriert werden.
 *   **Download:** Siehe **Releases** (rechts in der Sidebar).
 
 [![Download ZIP](https://img.shields.io/badge/Download-Source_Code_(ZIP)-00FF00?style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/archive/refs/heads/main.zip)
@@ -62,7 +62,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 [![Releases](https://img.shields.io/badge/View-Latest_Releases-blue?style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/releases)
 
 ### 🖨️ 3D Druck (.stl)
-Gehäuse-Dateien für den Controller und die Anschlüsse.
+* - **Gehäuse-Dateien für den Controller und die Anschlüsse.
 *   *(Dateien folgen in Kürze / Siehe Ordner `STL`)*
 
 <br>
