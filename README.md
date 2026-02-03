@@ -63,7 +63,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 
 ### 🖨️ 3D Druck (.stl)
 * - **Gehäuse-Dateien für den Controller und die Anschlüsse.
-*   *(Dateien folgen in Kürze / Siehe Ordner `STL`)*
+* - **(Dateien folgen in Kürze / Siehe Ordner `STL`)*
 
 <br>
 
@@ -245,21 +245,21 @@ Beispiel:
 
 ## 2. Teensy 4.0 flashen
 
-* - Benötigte Software: Teensy Loader
-* - Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
-* - Verbinde den Teensy per USB, drücke den **weißen Programmier-Knopf** auf dem Teensy und lade die .hex Datei hoch.
-* - jetzt sollte dein Teensy Booten, du solltest jetzt den "Learning Mode" Screen sehen, weil das "Magic Byte" noch nicht vorhanden ist.
-* - Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR öffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy übertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
-* - Der Teensy Boote jetzt durch, deine LEDs sollten nach dem Booten leuchten, "LED Test" steht im Display.
-* - Sollte etwas schief gegangen sein, kannst du ein "Rest" durchführen, oder konfigurierst die LEDs später im Webinterface.
+*   Benötigte Software: Teensy Loader
+*   Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
+*   Verbinde den Teensy per USB, drücke den **weißen Programmier-Knopf** auf dem Teensy und lade die .hex Datei hoch.
+*   jetzt sollte dein Teensy Booten, du solltest jetzt den "Learning Mode" Screen sehen, weil das "Magic Byte" noch nicht vorhanden ist.
+*   Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR öffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy übertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
+*   Der Teensy Boote jetzt durch, deine LEDs sollten nach dem Booten leuchten, "LED Test" steht im Display.
+*   Sollte etwas schief gegangen sein, kannst du ein "Rest" durchführen, oder konfigurierst die LEDs später im Webinterface.
 
-* - **Reset der Konfiguration:** Per externem Taster (Pin 2)
+*   **Reset der Konfiguration:** Per externem Taster (Pin 2)
 
-* - Trenne den Teensy vom Strom (USB raus).
-* - Halte den **externen Taster** (an Pin 2) gedrückt.
-* - Stecke USB wieder ein (während du gedrückt hältst).
-* - Auf dem Display sollte kurz "RESET CONFIG..." erscheinen.
-* - Lass den Taster los -> Der Teensy startet jetzt im Learning Mode.
+*   Trenne den Teensy vom Strom (USB raus).
+*   Halte den **externen Taster** (an Pin 2) gedrückt.
+*   Stecke USB wieder ein (während du gedrückt hältst).
+*   Auf dem Display sollte kurz "RESET CONFIG..." erscheinen.
+*   Lass den Taster los -> Der Teensy startet jetzt im Learning Mode.
 
  
 <table width="100%">
@@ -275,9 +275,9 @@ Beispiel:
 
 
 ## 3. ESP32 flashen
-* - Benötigte Software: Esptool oder ESP Download Tool.
-* - **Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
-* - **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
+*   Benötigte Software: Esptool oder ESP Download Tool.
+*   **Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
+*   **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
 
 ## 4. Setup & Konfiguration
 
