@@ -62,8 +62,9 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 [![Releases](https://img.shields.io/badge/View-Latest_Releases-blue?style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/releases)
 
 ### 🖨️ 3D Druck (.stl)
-* - **Gehäuse-Dateien für den Controller und die Anschlüsse.
-* - **(Dateien folgen in Kürze / Siehe Ordner `STL`)*
+![Printed.Parts](assets/Printed.Parts.jpg)
+
+* - **alle Datein zum Drucken der Gehäuse für Controller und Displays sind im Ordner -> `STL` zu finden*
 
 <br>
 
@@ -74,7 +75,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 * - **Display:**      SH1106 OLED (I2C) @ 1 MHz
 
 * - **Controller 2:** ESP32 DevKit V4 @ DualCore 240 MHZ - EnergySaver deaktiviert.
-* - **Display:**      ST7789V 240x320 (SPI) @ 26.6 MHz
+* - **Display:**      ST7789V 240x320 (SPI) @ 26.6 MHz / "40MHz Version in Release v3.0.2"
 
 ![Taster](assets/Taster.jpg)
 
@@ -252,6 +253,8 @@ Beispiel:
 *   Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR öffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy übertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
 *   Der Teensy Boote jetzt durch, deine LEDs sollten nach dem Booten leuchten, "LED Test" steht im Display.
 *   Sollte etwas schief gegangen sein, kannst du ein "Rest" durchführen, oder konfigurierst die LEDs später im Webinterface.
+
+![Teensy.LED.Manuel.Mode](assets/Teensy.LED.Manuel.Mode.jpg)
 
 *   **Reset der Konfiguration:** Per externem Taster (Pin 2)
 
