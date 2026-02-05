@@ -30,7 +30,7 @@ MATRIXLED kombiniert zwei Welten:
 
 * - **[Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
 
-![max.FPS.Wallpaper](assets/max.FPS.jpg)
+![SPI_@20MHz](assets/SPI_@20MHz.jpg)
 <br>
 
 ##
@@ -99,8 +99,9 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 
  STAGE 1: INGEST (USB High-Speed 480 Mbit/s)
  *  - Hardware: USB PHY -> Internal 512 Byte DMA Ring Buffer.
- *  - Software: readExact() (ITCM) liest Block-weise in 'rgbIn' (DTCM).
- *  - Protocol: Adalight Header Check ("Ada") + Checksum/Timeout Logic.
+ *  - Software: Streaming Parser (ITCM) scannt Datenstrom live nach 'Ada'.
+ *  - Action:   Direct Ingest in 'rgbIn' (DTCM) sobald Header erkannt.
+ *  - Logic:    Self-Healing (verwirft Müll-Daten automatisch).
     
  STAGE 2: PROCESSING (SIMD-like Integer Math)
  *  - Function: processLEDs() (ITCM, FASTRUN).
