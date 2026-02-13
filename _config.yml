@@ -1,7 +1,8 @@
-title: "MATRIXLED | Highspeed Ambilight & WebUi"
-description: "Ultra-low latency Ambilight system with Teensy 4.0 and ESP32."
+title: "MATRIXLED | Teensy 4.0 & APA102 Ambilight"
+description: "Ultra-low latency Ambilight controller using Teensy 4.0, ESP32 and APA102 / SK9822 LEDs. Includes WebUI."
 theme: jekyll-theme-hacker
 show_downloads: true
 favicon: /assets/favicon.ico
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
