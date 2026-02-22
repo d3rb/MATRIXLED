@@ -1,31 +1,31 @@
-![MATRIXLED.Wallpaper](assets/MATRIXLED.jpg)
+﻿![MATRIXLED.Wallpaper](assets/MATRIXLED.jpg)
 
 # [MATRIXLED]
 
 > **Highspeed Ambilight & WebUI | Teensy 4.0 & ESP32 | Ultra-Low Latency**
 
 ## Einleitung
-MATRIXLED ist ein High-Performance Ambilight-Projekt mit dem klaren Fokus auf **maximale Geschwindigkeit, minimale Latenz und vollständige Messbarkeit**.
-Dieses Projekt ist nicht als weiteres „Ambilight für den Alltag“ entstanden, sondern aus der Frage heraus:
+MATRIXLED ist ein High-Performance Ambilight-Projekt mit dem klaren Fokus auf **maximale Geschwindigkeit, minimale Latenz und vollstÃ¤ndige Messbarkeit**.
+Dieses Projekt ist nicht als weiteres â€žAmbilight fÃ¼r den Alltagâ€œ entstanden, sondern aus der Frage heraus:
 
-> *Wie schnell können adressierbare LEDs wirklich angesteuert werden – wenn man nichts künstlich limitiert?*
+> *Wie schnell kÃ¶nnen adressierbare LEDs wirklich angesteuert werden â€“ wenn man nichts kÃ¼nstlich limitiert?*
 
 ## Projektbeschreibung
 MATRIXLED kombiniert zwei Welten:
 * - **Teensy 4.x** als extrem schneller, deterministischer LED-Controller
 * - **ESP32** als Steuer-, UI- und Konfigurations-Einheit (Webserver + Display)
-* - **Der kritische Datenpfad (PC → LEDs) ist **bewusst frei von WLAN, TCP/IP oder Betriebssystem-Jitter** gehalten.
-* - **Der ESP32 übernimmt ausschließlich Komfort- und Kontrollfunktionen.
+* - **Der kritische Datenpfad (PC â†’ LEDs) ist **bewusst frei von WLAN, TCP/IP oder Betriebssystem-Jitter** gehalten.
+* - **Der ESP32 Ã¼bernimmt ausschlieÃŸlich Komfort- und Kontrollfunktionen.
 
-## Nerd Stuff – Pipeline (Kurzfassung)
-* - **PC → USB → Teensy (DMA) → LEDs  
-* - **ESP32 → UI / Web / Display (nicht zeitkritisch)
+## Nerd Stuff â€“ Pipeline (Kurzfassung)
+* - **PC â†’ USB â†’ Teensy (DMA) â†’ LEDs  
+* - **ESP32 â†’ UI / Web / Display (nicht zeitkritisch)
 
 # Features
 
 * - **Teensy 4.0:**   High-Speed APA102 Treiber ((SPI @ 20MHz) (Levelshifter)), USB Adalight Interface, OLED Status-Display.
-* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug Menü / EEPROM Lesen & Schreiben.
-* - **Ambilight:**    Unterstützt PC-Synchronisation via USB Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIXLED (noch nicht veröffentlicht)
+* - **OLED Display:** FPS Counter, (Reale FPS Berechnung), / Bootscreen / LED Test (automatisch (Boot) per Taster). Debug MenÃ¼ / EEPROM Lesen & Schreiben.
+* - **Ambilight:**    UnterstÃ¼tzt PC-Synchronisation via USB Adalight Protokoll, funktioniert mit AmbiPro / Hyperion / HyperHDR / Prismatic und eigene Software MATRIXLED (noch nicht verÃ¶ffentlicht)
 <br>
 
 * - **[Performance HUD:] Framerate / CPU Temperature / CPU Usage / Data Rate / Free RAM / SPI Frequency
@@ -36,15 +36,15 @@ MATRIXLED kombiniert zwei Welten:
 ##
 
 <br>
-* - **[Debug Menü:] Performance / Thermal CPU / Power / Memory / Sys Info
+* - **[Debug MenÃ¼:] Performance / Thermal CPU / Power / Memory / Sys Info
 
-![Debug.Menü](assets/Debug.Screen.jpg)
+![Debug.MenÃ¼](assets/Debug.Screen.jpg)
 
 
 * - ***ESP32:**          Webinterface, WiFi-Management, Effekt-Berechnung.
 * - ***Web Interface:**  Modernes React-basiertes UI zur Steuerung von Effekten, Farben und Helligkeit uvm.
-* - **Effekte:**        "Für LED Test" -> MATRIXLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benötigt schnellen CPU.
-** - **Erweiterungen:** "FPS Button" benötigt Script (start_fps_native.bat) sowie HWINFO oder RTSS / "Monitor Button" Hardware-Monitor zeigt Daten des ESP (CPU Last Core 1&2 / CPU Temp / RAM Free%Used)
+* - **Effekte:**        "FÃ¼r LED Test" -> MATRIXLED, Rain, >_ CODE X, Fire, Plasma, Rainbow, uvm. (Canvas2D@4K) benÃ¶tigt schnellen CPU.
+** - **Erweiterungen:** "FPS Button" benÃ¶tigt Script (start_fps_native.bat) sowie HWINFO oder RTSS / "Monitor Button" Hardware-Monitor zeigt Daten des ESP (CPU Last Core 1&2 / CPU Temp / RAM Free%Used)
 * - **TFT Display**    Matrix Regen mit **Smart-Gain Filter**: Passt sich dynamisch den LED-Farben an. Dunkle Szenen werden intelligent aufgehellt (Boost 3-126 -> 120-255), Rauschen gefiltert (<3) und helle Farben brillant dargestellt.
 
 <br>
@@ -52,9 +52,9 @@ MATRIXLED kombiniert zwei Welten:
 
 ## [ Downloads & Extras ]
 
-### 🌐 Web Interface (High-Res Version)
-Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
-* - **Einfach die `.html` Datei lokal am PC öffnen.
+### ðŸŒ Web Interface (High-Res Version)
+Da das Hintergrundbild zu groÃŸ fÃ¼r den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
+* - **Einfach die `.html` Datei lokal am PC Ã¶ffnen.
 * - **Die IP-Adresse des ESP32 kann in der lokalen Version konfiguriert werden.
 *   **Download:** Siehe **Releases** (rechts in der Sidebar).
 
@@ -62,16 +62,16 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 [![Downloads](https://img.shields.io/github/downloads/d3rb/MATRIXLED/total?color=00FF00&style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/releases)
 [![Releases](https://img.shields.io/badge/View-Latest_Releases-blue?style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/releases)
 
-### 🖨️ 3D Druck (.stl)
+### ðŸ–¨ï¸ 3D Druck (.stl)
 ![Printed.Parts](assets/Printed.Parts.jpg)
 
-* - **alle Datein zum Drucken der Gehäuse für Controller und Displays sind im Ordner -> `STL` zu finden*
+* - **alle Datein zum Drucken der GehÃ¤use fÃ¼r Controller und Displays sind im Ordner -> `STL` zu finden*
 
 <br>
 
 ## Hardware Specs
 
-* - **Controller 1:** Teensy 4.0 @ 720 MHz "Overclocked" - ich empfehle ein kleinen Kühlkörper!!
+* - **Controller 1:** Teensy 4.0 @ 720 MHz "Overclocked" - ich empfehle ein kleinen KÃ¼hlkÃ¶rper!!
 * - **LEDs:**         APA102C (SPI) @ 20 MHz
 * - **Display:**      SH1106 OLED (I2C) @ 1 MHz
 
@@ -90,11 +90,11 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
    
  2. MEMORY HIERARCHY (Tightly Coupled Memory)
  * - ITCM (Instruction TCM): 64-bit Bus, 0 Wait-States.
- * - Hält "Hot Path" Code: processLEDs(), sendOutBuffer(), readExact().
+ * - HÃ¤lt "Hot Path" Code: processLEDs(), sendOutBuffer(), readExact().
  * - Verhindert Cache-Misses und Pipeline-Stalls bei kritischen Loops.
  * - DTCM (Data TCM): 64-bit Bus, 0 Wait-States.
- * - Hält Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
- * - Ermöglicht Single-Cycle Zugriff auf LED-Daten.
+ * - HÃ¤lt Stack, Frame-Buffer (rgbIn, outBufA/B) und globale Variablen.
+ * - ErmÃ¶glicht Single-Cycle Zugriff auf LED-Daten.
    
 ## [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
 
@@ -104,7 +104,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
  *  - Software: Streaming Parser (ITCM) scannt Datenstrom live nach 'Ada'.
  *  - Action:   Direct Ingest in 'rgbIn' (DTCM) sobald Header erkannt.
  *  - Safety:   Header + Payload werden nur verarbeitet, wenn der komplette Frame (`payload + 6`) verfuegbar ist.
- *  - Logic:    Self-Healing (verwirft Müll-Daten automatisch).
+ *  - Logic:    Self-Healing (verwirft MÃ¼ll-Daten automatisch).
     
  STAGE 2: PROCESSING (SIMD-like Integer Math)
  *  - Function: processLEDs() (ITCM, FASTRUN).
@@ -115,7 +115,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
  *  - Output:   32-Bit APA102 Frames (0xFF | B | G | R) direkt in 'backBuf'.
 
  STAGE 3: SWAP (Atomic Transition)
- * - Trigger:  Sobald Frame vollständig verarbeitet ist.
+ * - Trigger:  Sobald Frame vollstÃ¤ndig verarbeitet ist.
  * - Action:   Pointer Swap (frontBuf <-> backBuf).
  * - Cost:     Nahezu 0 CPU-Zyklen (nur Zeiger-Adressen tauschen).
    
@@ -133,33 +133,33 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 
 ## [ TELEMETRY & SUPERVISOR ]
 
- * - LPI2C (OLED): Overclocked auf 1 MHz (Fast Mode Plus) für min. Latenz.
+ * - LPI2C (OLED): Overclocked auf 1 MHz (Fast Mode Plus) fÃ¼r min. Latenz.
  * - USB Serial: Timeout auf 5 ms gesetzt, um lange Read-Stalls im Render-Loop zu vermeiden.
- * - FPS Engine:   Exponential Moving Average (EMA) Filter für glatte Anzeige.
+ * - FPS Engine:   Exponential Moving Average (EMA) Filter fÃ¼r glatte Anzeige.
  * - 3D Engine:    Real-time FPU projection engine (Boot Animations).
  * - Diagnostics:  Startup Benchmarking (I2C Latency Check).
- * - Thermal:      Überwachung der Die-Temperatur (tempmon).
+ * - Thermal:      Ãœberwachung der Die-Temperatur (tempmon).
  * - Load Monitor: Messung der aktiven CPU-Zyklen vs. Idle-Time.
  * - Watchdogs:    Screensaver (24s Idle).
 
 ## BENCHMARK DISCLAIMER MATRIXLED
 
 > * FPS-Werte beschreiben den **internen Durchsatz**, nicht die sichtbare Bildrate.
-> * Überabtastung dient Messung & Verifikation – nicht Darstellung.
+> * Ãœberabtastung dient Messung & Verifikation â€“ nicht Darstellung.
 > * Dieses Projekt zeigt intern gemessene Performance-Werte (FPS), die sich auf den reinen Daten- und LED-Pipeline-Durchsatz beziehen.
 
 ## WICHTIG:
 - Die angezeigten FPS sind keine sichtbaren Bildwiederholraten.
-- Sie sind unabhängig von der Monitor-Refresh-Rate (z.B. 60 Hz / 120 Hz).
-- Sie stellen dar, wie schnell Daten verarbeitet, übertragen und an die LEDs ausgegeben werden können.
+- Sie sind unabhÃ¤ngig von der Monitor-Refresh-Rate (z.B. 60 Hz / 120 Hz).
+- Sie stellen dar, wie schnell Daten verarbeitet, Ã¼bertragen und an die LEDs ausgegeben werden kÃ¶nnen.
 
 Beispiel:
 * - Ein Monitor mit 120 Hz kann maximal 120 unterschiedliche Frames pro Sekunde anzeigen.
 * - Die MATRIXLED Pipeline kann jedoch deutlich mehr Frames intern verarbeiten.
-* - Diese überabtastung dient der Messung von:
+* - Diese Ã¼berabtastung dient der Messung von:
 * - maximalem Datendurchsatz
 * - Latenz
-* - Stabilität
+* - StabilitÃ¤t
 * - Reserven der Hardware
 
 * - Die hohen FPS-Werte sind somit:
@@ -243,7 +243,7 @@ Beispiel:
 
 | Komponente | Pin | Anmerkung |
 | :--- | :--- | :--- |
-| **LED Data** | 11 | APA102 Data (Grün) |
+| **LED Data** | 11 | APA102 Data (GrÃ¼n) |
 | **LED Clock** | 13 | APA102 Clock (Gelb/Blau) |
 | **OLED SDA** | 18 | I2C Data (SH1106) |
 | **OLED SCL** | 19 | I2C Clock (SH1106) |
@@ -251,21 +251,21 @@ Beispiel:
 
 ## 2. Teensy 4.0 flashen
 
-*   Benötigte Software: Teensy Loader
+*   BenÃ¶tigte Software: Teensy Loader
 *   Datei: `Firmware/Teensy_Matrix.hex` / Die kompilierten Firmware-Dateien befinden sich im Ordner `Firmware`.
-*   Verbinde den Teensy per USB, drücke den **weißen Programmier-Knopf** auf dem Teensy und lade die .hex Datei hoch.
+*   Verbinde den Teensy per USB, drÃ¼cke den **weiÃŸen Programmier-Knopf** auf dem Teensy und lade die .hex Datei hoch.
 *   jetzt sollte dein Teensy Booten, du solltest jetzt den "Learning Mode" Screen sehen, weil das "Magic Byte" noch nicht vorhanden ist.
-*   Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR öffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy übertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
+*   Du kannst jetzt deine LEDs manuel Konfigurieren, oder nutzt einfach den "AUTOMODE start software" , indem du zb. HyperHDR Ã¶ffnest und schon wird die LED Anzahl die du in der Software festgelegt hast, an den Teensy Ã¼bertragen werden. Im Display siehst du kurz die Anzahl deiner LEDs.
 *   Der Teensy Boote jetzt durch, deine LEDs sollten nach dem Booten leuchten, "LED Test" steht im Display.
-*   Sollte etwas schief gegangen sein, kannst du ein "Rest" durchführen, oder konfigurierst die LEDs später im Webinterface.
+*   Sollte etwas schief gegangen sein, kannst du ein "Rest" durchfÃ¼hren, oder konfigurierst die LEDs spÃ¤ter im Webinterface.
 
 ![Teensy.LED.Manuel.Mode](assets/Teensy.LED.Manuel.Mode.jpg)
 
 *   **Reset der Konfiguration:** Per externem Taster (Pin 2)
 
 *   Trenne den Teensy vom Strom (USB raus).
-*   Halte den **externen Taster** (an Pin 2) gedrückt.
-*   Stecke USB wieder ein (während du gedrückt hältst).
+*   Halte den **externen Taster** (an Pin 2) gedrÃ¼ckt.
+*   Stecke USB wieder ein (wÃ¤hrend du gedrÃ¼ckt hÃ¤ltst).
 *   Auf dem Display sollte kurz "RESET CONFIG..." erscheinen.
 *   Lass den Taster los -> Der Teensy startet jetzt im Learning Mode.
 
@@ -283,7 +283,7 @@ Beispiel:
 
 
 ## 3. ESP32 flashen
-*   Benötigte Software: Esptool oder ESP Download Tool.
+*   BenÃ¶tigte Software: Esptool oder ESP Download Tool.
 *   **Partitionstabelle:** `Firmware/ESP32_partitions.bin` an Adresse `0x8000`
 *   **Firmware:** `Firmware/ESP32_Matrix.bin` an Adresse `0x10000`
 
@@ -299,7 +299,7 @@ Beim ersten Start (oder nach einem Reset) findet der ESP32 keine gespeicherten W
 
 **Schritte:**
 1.  Verbinde dein Handy oder PC mit dem WLAN **`MATRIX-SETUP`**.
-2.  Öffne den Browser und gehe auf `http://192.168.4.1`.
+2.  Ã–ffne den Browser und gehe auf `http://192.168.4.1`.
 3.  Gib deine **WLAN-SSID** und das **Passwort** deines Heimnetzwerks ein.
 
 ![Wifi.Setup.Browser](assets/Wifi.Setup.Browser.jpg)
@@ -313,21 +313,21 @@ Beim ersten Start (oder nach einem Reset) findet der ESP32 keine gespeicherten W
 ![HW.Monitor.FPS.Counter.Screen](assets/HW.Monitor.FPS.Counter.Screen.jpg)
 
 ### 3. Normaler Start
-Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die MATRIXLED-Oberfläche.
+Nach erfolgreicher Konfiguration lÃ¤dt der ESP32 die Daten, verbindet sich mit dem WLAN und zeigt die IP-Adresse kurz auf dem Display an. Danach startet die MATRIXLED-OberflÃ¤che.
 
-### 4. WLAN ändern / Reset
-Um die WLAN-Daten zu löschen und den Setup-Modus erneut zu starten:
+### 4. WLAN Ã¤ndern / Reset
+Um die WLAN-Daten zu lÃ¶schen und den Setup-Modus erneut zu starten:
 
 *   **Methode A (Hardware):**
     1.  Schalte den ESP32 ein.
-    2.  Innerhalb der ersten **1.5 Sekunden** (während der Boot-Text "Hold BOOT to Reset..." sichtbar ist), halte den **BOOT-Button** gedrückt.
-    3.  Das Display wird rot ("RESET WIFI..."), die Daten werden gelöscht und das Gerät startet im AP-Modus neu.
+    2.  Innerhalb der ersten **1.5 Sekunden** (wÃ¤hrend der Boot-Text "Hold BOOT to Reset..." sichtbar ist), halte den **BOOT-Button** gedrÃ¼ckt.
+    3.  Das Display wird rot ("RESET WIFI..."), die Daten werden gelÃ¶scht und das GerÃ¤t startet im AP-Modus neu.
 
 *   **Methode B (Software):**
     Rufe im Browser die URL `http://<DEINE-ESP-IP>/reset_wifi` auf.
 
 ### 5. Zugangsdaten (OTA Update)
-Für Firmware-Updates über das Webinterface (`/upload`):
+FÃ¼r Firmware-Updates Ã¼ber das Webinterface (`/upload`):
 *   **Benutzername:** `admin`
 *   **Passwort:** `matrix`
 
@@ -336,19 +336,19 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 ### Teensy 4.0 (Externer Taster an Pin 2)
 | Aktion | Funktion |
 | :--- | :--- |
-| **Beim Start gedrückt halten** | **Reset der Konfiguration:** Löscht die gespeicherte LED-Anzahl und andere Einstellungen. Der Teensy startet im "Learning Mode". |
+| **Beim Start gedrÃ¼ckt halten** | **Reset der Konfiguration:** LÃ¶scht die gespeicherte LED-Anzahl und andere Einstellungen. Der Teensy startet im "Learning Mode". |
 | **1x Klick** | Startet den **LED-Selbsttest** (Knight-Rider-Effekt). |
-| **2x Klick** | Schaltet die **globale Helligkeit** um (100% → 50% → 15% → 100%). |
-| **5x Klick** | Öffnet das **Debug-Menü** auf dem OLED-Display. |
-| **Lang gedrückt (>1s)** | Schaltet das OLED-Display an/aus (**Stealth Mode**). |
-| **Im Debug-Menü: 1x Klick** | Blättert zur nächsten Seite. |
-| **Im Debug-Menü: Lang gedrückt** | Verlässt das Debug-Menü. |
+| **2x Klick** | Schaltet die **globale Helligkeit** um (100% â†’ 50% â†’ 15% â†’ 100%). |
+| **5x Klick** | Ã–ffnet das **Debug-MenÃ¼** auf dem OLED-Display. |
+| **Lang gedrÃ¼ckt (>1s)** | Schaltet das OLED-Display an/aus (**Stealth Mode**). |
+| **Im Debug-MenÃ¼: 1x Klick** | BlÃ¤ttert zur nÃ¤chsten Seite. |
+| **Im Debug-MenÃ¼: Lang gedrÃ¼ckt** | VerlÃ¤sst das Debug-MenÃ¼. |
 
 ### ESP32 (BOOT-Taster auf dem Board)
 | Aktion | Funktion |
 | :--- | :--- |
-| **Beim Start (1.5s Fenster)** | **WLAN-Reset:** Löscht die gespeicherten WLAN-Daten (siehe Setup). |
-| **1x Klick (im Betrieb)** | Ändert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
+| **Beim Start (1.5s Fenster)** | **WLAN-Reset:** LÃ¶scht die gespeicherten WLAN-Daten (siehe Setup). |
+| **1x Klick (im Betrieb)** | Ã„ndert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
 
 <br>
 [WebUi]
@@ -368,32 +368,31 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 
 ## AboutME
 
-Mich haben Computer und technische Geräte schon immer fasziniert. Das begann bereits in meiner Kindheit, als mein Vater einen Commodore Plus/4 besaß. Von dort aus entwickelte sich meine Reise weiter – über den Amiga 1200, einen 486DX2 und viele weitere Systeme bis heute.
+Mich haben Computer und technische GerÃ¤te schon immer fasziniert. Das begann bereits in meiner Kindheit, als mein Vater einen Commodore Plus/4 besaÃŸ. Von dort aus entwickelte sich meine Reise weiter â€“ Ã¼ber den Amiga 1200, einen 486DX2 und viele weitere Systeme bis heute.
 
-Technik war für mich nie nur ein Werkzeug, sondern etwas, das man verstehen, erkunden und verbessern kann.
+Technik war fÃ¼r mich nie nur ein Werkzeug, sondern etwas, das man verstehen, erkunden und verbessern kann.
 
-Die ersten Ambilight-Systeme, die ich selbst besessen habe, waren noch sehr einfach: drei LED-Leisten, nicht adressierbar, physisch nur wenige LEDs – weit entfernt von dem, was heute möglich ist. Doch LEDs haben mich schon immer begeistert, vor allem wegen ihrer Farben, Dynamik und der Möglichkeiten, Atmosphäre zu erzeugen.
+Die ersten Ambilight-Systeme, die ich selbst besessen habe, waren noch sehr einfach: drei LED-Leisten, nicht adressierbar, physisch nur wenige LEDs â€“ weit entfernt von dem, was heute mÃ¶glich ist. Doch LEDs haben mich schon immer begeistert, vor allem wegen ihrer Farben, Dynamik und der MÃ¶glichkeiten, AtmosphÃ¤re zu erzeugen.
 
-Aus dieser Begeisterung heraus entstand dieses Projekt. Mein Ziel war es nicht nur, ein Ambilight zu bauen, das gut aussieht, sondern eines, das messbar, erklärbar und technisch nachvollziehbar ist – mit klaren Antworten auf Fragen wie:
+Aus dieser Begeisterung heraus entstand dieses Projekt. Mein Ziel war es nicht nur, ein Ambilight zu bauen, das gut aussieht, sondern eines, das messbar, erklÃ¤rbar und technisch nachvollziehbar ist â€“ mit klaren Antworten auf Fragen wie:
 "Wie schnell ist es wirklich? Wo liegen die Grenzen? Und wie viel Performance bleibt oft ungenutzt?"
 
-Der Name MATRIXLED entstand eher intuitiv. Ich fand ihn einfach passend – und er lässt Raum für Fantasie. Wie der Film Matrix steht er für Technik, Tiefe und die Idee, hinter die Oberfläche zu schauen.
+Der Name MATRIXLED entstand eher intuitiv. Ich fand ihn einfach passend â€“ und er lÃ¤sst Raum fÃ¼r Fantasie. Wie der Film Matrix steht er fÃ¼r Technik, Tiefe und die Idee, hinter die OberflÃ¤che zu schauen.
 
-Was als kleines Experiment begann, ist mit der Zeit gewachsen. Nicht aus dem Wunsch nach Komplexität, sondern aus Neugier – und aus dem Spaß daran, Dinge weiterzudenken, zu optimieren und neu zu gestalten. Ich hoffe euch gefällt mein Projekt!!
+Was als kleines Experiment begann, ist mit der Zeit gewachsen. Nicht aus dem Wunsch nach KomplexitÃ¤t, sondern aus Neugier â€“ und aus dem SpaÃŸ daran, Dinge weiterzudenken, zu optimieren und neu zu gestalten. Ich hoffe euch gefÃ¤llt mein Projekt!!
 
-grüße -= d3rb =-
+grÃ¼ÃŸe -= d3rb =-
 
 
 <br>
 ## Support & Kontakt
-Gefällt dir das Projekt?
-*   Lass einen ⭐ **Star** auf GitHub da!
+GefÃ¤llt dir das Projekt?
+*   Lass einen â­ **Star** auf GitHub da!
 *   Melde Fehler unter **Issues**.
 
-### ☕ Support
-Wenn du meine Arbeit unterstützen möchtest:
+### â˜• Support
+Wenn du meine Arbeit unterstÃ¼tzen mÃ¶chtest:
 *   [PayPal Spende](https://www.paypal.com/donate/?hosted_button_id=9NSRVUTJ6Z2HL)
 
 ## Lizenz
 Binary-only Distribution.
-
