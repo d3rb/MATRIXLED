@@ -1,4 +1,4 @@
-﻿![MATRIXLED.Wallpaper](assets/MATRIXLED.jpeg)
+﻿![MATRIXLED.Wallpaper](assets/MATRIXLED.jpg)
 
 # [MATRIXLED]
 
