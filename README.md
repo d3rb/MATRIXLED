@@ -362,8 +362,8 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 
 ## Links zu Komponenten & Software
 *   **Teensy 4.0:**                            https://www.pjrc.com/store/teensy40.html
-    **Display I2C SSD1309@2.42Zoll:**          https://de.aliexpress.com/item/1005011617864263.html?gatewayAdapt=glo2deu
-    **Display SPI ST7789V 240x320@2.0Zoll:**   https://de.aliexpress.com/item/1005009741238384.html
+*   **Display I2C SSD1309@2.42Zoll:**          https://de.aliexpress.com/item/1005011617864263.html?gatewayAdapt=glo2deu
+*   **Display SPI ST7789V 240x320@2.0Zoll:**   https://de.aliexpress.com/item/1005009741238384.html
 *   **Display SSD1306@1.54Zoll:**              https://www.amazon.de/dp/B0CTGTZW83?ref=ppx_yo2ov_dt_b_fed_asin_title&th=11005006141235306.html
 *   **ESP32-WROOM-32D:**                       https://de.aliexpress.com/item/1005007820190456.html
 *   **APA102:**                                https://de.aliexpress.com/item/32969463242.html
