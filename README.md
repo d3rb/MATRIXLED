@@ -71,10 +71,9 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 
 ## Hardware Specs
 
-* - **Controller 1:** Teensy 4.0 @ 720 MHz "Overclocked" - ich empfehle ein kleinen Kühlkörper!!
-* - **LEDs:**         APA102C (SPI) @ 20 MHz
-* - **Display:**      SH1106 OLED (I2C) @ 1 MHz
-
+* - **Controller 1:** Teensy 4.0 @ 816 MHz "Overclocked" - ich empfehle ein kleinen Kühlkörper!!
+* - **LEDs:**         APA102C (SPI) @ 22 MHz
+* - **Display:**      SH1106 OLED (I2C) @ 1 MHz <-old / New SSD1309 OLED | schnellstes OLED@ 2.4MHz per Reg. "Tweak"
 * - **Controller 2:** ESP32 DevKit V4 @ DualCore 240 MHZ - EnergySaver deaktiviert.
 * - **Display:**      ST7789V 240x320 (SPI) @ 80.0 MHz / "40MHz Version in Release v3.0.2"
 
@@ -84,8 +83,8 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
   
  1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
  * - High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
- * - Clock: 720 MHz (Overclocked via CCM registers)
- * - VCore: 1.250V (Dynamic Voltage Scaling via PMU_REG_CORE 0x14)
+ * - Clock: 816 MHz (Overclocked via CCM registers)
+ * - VCore: 1.300V (Dynamic Voltage Scaling via PMU_REG_CORE 0x18)
  * - FPU:   Double Precision Hardware Floating Point Unit enabled
    
  2. MEMORY HIERARCHY (Tightly Coupled Memory)
@@ -99,8 +98,8 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 ## [ DATA PIPELINE: "ZERO-COPY" DOUBLE BUFFERING ]
 
  STAGE 1: INGEST (USB High-Speed 480 Mbit/s)
- *  - Hardware: USB PHY -> Internal 512 Byte DMA Ring Buffer.
- *  - Buffering: Build-Flag `-DSERIAL_RX_BUFFER_SIZE=4096` erweitert den USB-RX-Puffer fuer stabile Bursts.
+ *  - Hardware: USB PHY (512 Byte Packets) -> DMA -> RAM.
+ *  - Buffering: Build-Flag `-DSERIAL_RX_BUFFER_SIZE=4096` definiert den Software-Ring-Buffer für stabile Bursts.
  *  - Software: Streaming Parser (ITCM) scannt Datenstrom live nach 'Ada'.
  *  - Action:   Direct Ingest in 'rgbIn' (DTCM) sobald Header erkannt.
  *  - Safety:   Header + Payload werden nur verarbeitet, wenn der komplette Frame (`payload + 6`) verfuegbar ist.
@@ -119,7 +118,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
  * - Action:   Pointer Swap (frontBuf <-> backBuf).
  * - Cost:     Nahezu 0 CPU-Zyklen (nur Zeiger-Adressen tauschen).
    
- STAGE 4: PRIMARY EGEST (LPSPI Output @ 20 MHz)
+ STAGE 4: PRIMARY EGEST (LPSPI Output @ 22 MHz)
  * - Hardware: Low Power SPI (LPSPI) Modul.
  * - Function: sendOutBuffer() (ITCM).
  * - Data:     Liest von 'frontBuf' (DTCM).
@@ -133,7 +132,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 
 ## [ TELEMETRY & SUPERVISOR ]
 
- * - LPI2C (OLED): Overclocked auf 1 MHz (Fast Mode Plus) für min. Latenz.
+ * - LPI2C (OLED): Overclocked auf 2,4 MHz (per Reg Tweak) für min. Latenz.
  * - USB Serial: Timeout auf 5 ms gesetzt, um lange Read-Stalls im Render-Loop zu vermeiden.
  * - FPS Engine:   Exponential Moving Average (EMA) Filter für glatte Anzeige.
  * - 3D Engine:    Real-time FPU projection engine (Boot Animations).
@@ -182,7 +181,7 @@ Beispiel:
  * - **Core 1:** UI Rendering & Matrix Engine (Dedicated Graphics Core).
 
  2. DISPLAY SUBSYSTEM
- * - Driver: TFT_eSPI (Hardware SPI).
+ * - Driver: TFT_eSPI (Hardware SPI) @80MHZ.
  * - Mode:   Direct Framebuffer Access.
 
 ## [ DATA PIPELINE: DUAL-CORE PARALLELISM ]
@@ -227,7 +226,19 @@ Beispiel:
 | **Sync/Trigger** | 3 | 33 | Synchronisation & Reset |
 | **GND** | GND | GND | **WICHTIG:** Gemeinsame Masse verbinden! |
 
-### ESP32 Display (ST7789 SPI)
+### Teensy 4.0 Peripherie @2.4MHz
+
+| Komponente | Pin | Anmerkung |
+| :--- | :--- | :--- |
+| **LED Data** | 11 | APA102 Data (Grün) |
+| **LED Clock** | 13 | APA102 Clock (Gelb/Blau) |
+| **OLED SDA** | 18 | I2C Data (SSD1309) | schnellstes OLED@ 2.4MHz per Reg. Tweak
+| **OLED SCL** | 19 | I2C Clock (SSD1309) |
+| **OLED VCC** | VCC | 3.3V Pin |
+| **OLED GND** | GND | GND Pin |
+| **Button** | 2 | Taster gegen GND |
+
+### ESP32 Display (ST7789 SPI) @80MHZ
 
 | Funktion | ESP32 Pin | Display Pin |
 | :--- | :--- | :--- |
@@ -239,15 +250,7 @@ Beispiel:
 | **DC** | GPIO 27 | DC |
 | **CS** | GPIO 26 | CS |
 
-### Teensy 4.0 Peripherie
 
-| Komponente | Pin | Anmerkung |
-| :--- | :--- | :--- |
-| **LED Data** | 11 | APA102 Data (Grün) |
-| **LED Clock** | 13 | APA102 Clock (Gelb/Blau) |
-| **OLED SDA** | 18 | I2C Data (SH1106) |
-| **OLED SCL** | 19 | I2C Clock (SH1106) |
-| **Button** | 2 | Taster gegen GND |
 
 ## 2. Teensy 4.0 flashen
 
@@ -299,7 +302,7 @@ Beim ersten Start (oder nach einem Reset) findet der ESP32 keine gespeicherten W
 
 **Schritte:**
 1.  Verbinde dein Handy oder PC mit dem WLAN **`MATRIX-SETUP`**.
-2.  Öffne den Browser und gehe auf `http://192.168.4.1`.
+2.  Öffne den Browser und gehe auf `http://192.1.1.1`.
 3.  Gib deine **WLAN-SSID** und das **Passwort** deines Heimnetzwerks ein.
 
 ![Wifi.Setup.Browser](assets/Wifi.Setup.Browser.jpg)
@@ -358,13 +361,14 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 <br>
 
 ## Links zu Komponenten & Software
-*   **Teensy 4.0:**                    https://www.pjrc.com/store/teensy40.html
-*   **Display ST7789V 240x320 (SPI):** https://de.aliexpress.com/item/1005009741238384.html
-*   **Display SSD1306:**               https://de.aliexpress.com/item/1005006141235306.html
-*   **ESP32-WROOM-32D:**               https://de.aliexpress.com/item/1005007820190456.html
-*   **APA102:**                        https://de.aliexpress.com/item/32969463242.html
-*   **Level Shifter SN74AHCT125N:**    https://de.aliexpress.com/item/1005010466137824.html
-*   **Taster Kailh 6x6x7.3mm:**        https://de.aliexpress.com/item/1005005497422200.html
+*   **Teensy 4.0:**                            https://www.pjrc.com/store/teensy40.html
+    **Display I2C SSD1309@2.42Zoll:**          https://de.aliexpress.com/item/1005011617864263.html?gatewayAdapt=glo2deu
+    **Display SPI ST7789V 240x320@2.0Zoll:**   https://de.aliexpress.com/item/1005009741238384.html
+*   **Display SSD1306@1.54Zoll:**              https://www.amazon.de/dp/B0CTGTZW83?ref=ppx_yo2ov_dt_b_fed_asin_title&th=11005006141235306.html
+*   **ESP32-WROOM-32D:**                       https://de.aliexpress.com/item/1005007820190456.html
+*   **APA102:**                                https://de.aliexpress.com/item/32969463242.html
+*   **Level Shifter SN74AHCT125N:**            https://de.aliexpress.com/item/1005010466137824.html
+*   **Taster Kailh 6x6x7.3mm:**                https://de.aliexpress.com/item/1005005497422200.html
 
 ## AboutME
 
