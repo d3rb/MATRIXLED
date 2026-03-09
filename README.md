@@ -130,6 +130,13 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
  * - Target:   ESP32 Web Controller (Telemetry & Preview).
  * - Data:     Cluster-Downsampled RGB + Status (Binary Protocol).
 
+ STAGE 6: OLED DIAGNOSTICS (SSD1306 @ High-Speed I2C)
+ * - Render:   Adafruit_SSD1306 schreibt in den RAM-Framebuffer.
+ * - Flush:    fastDisplay() als zentraler Ausgabepfad.
+ * - Fast Path: Burst-Transfer (optional Raw-LPI2C FIFO).
+ * - Safety:   Automatischer Fallback auf Legacy-Page-Transfer.
+ * - Clocking: Zielrate per I2C_SPEED (aktuell 2.4 MHz), angewandt via setWireRawHz().
+
 ## [ TELEMETRY & SUPERVISOR ]
 
  * - LPI2C (OLED): Overclocked auf 2,4 MHz (per Reg Tweak) für min. Latenz.
