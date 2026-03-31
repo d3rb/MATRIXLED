@@ -53,10 +53,10 @@ MATRIXLED kombiniert zwei Welten:
 ## [ Downloads & Extras ]
 
 ### 🌐 Web Interface (High-Res Version)
-Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann die **High-Quality Version** der Website hier heruntergeladen werden.
+Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann die High-Quality Version der Website hier heruntergeladen werden.
 * - **Einfach die `.html` Datei lokal am PC öffnen.
 * - **Die IP-Adresse des ESP32 kann in der lokalen Version konfiguriert werden.
-*   **Download:** Siehe **Releases** (rechts in der Sidebar).
+* - **Download:** Siehe **Releases** (rechts in der Sidebar).
 
 [![Download ZIP](https://img.shields.io/badge/Download-Source_Code_(ZIP)-00FF00?style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/archive/refs/heads/main.zip)
 [![Downloads](https://img.shields.io/github/downloads/d3rb/MATRIXLED/total?color=00FF00&style=for-the-badge&logo=github)](https://github.com/d3rb/MATRIXLED/releases)
@@ -81,13 +81,13 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
 
 ## [ PIPELINE ARCHITECTURE @ Teensy 4.0 ]
   
- 1. CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
+CORE ARCHITECTURE  (Teensy 4.0) (Cortex-M7)
  * - High-performance NXP i.MX RT1062 crossover MCU delivers real-time operation 
  * - Clock: 816 MHz (Overclocked via CCM registers)
  * - VCore: 1.300V (Dynamic Voltage Scaling via PMU_REG_CORE 0x18)
  * - FPU:   Double Precision Hardware Floating Point Unit enabled
    
- 2. MEMORY HIERARCHY (Tightly Coupled Memory)
+ MEMORY HIERARCHY (Tightly Coupled Memory)
  * - ITCM (Instruction TCM): 64-bit Bus, 0 Wait-States.
  * - Hält "Hot Path" Code: processLEDs(), sendOutBuffer(), readExact().
  * - Verhindert Cache-Misses und Pipeline-Stalls bei kritischen Loops.
@@ -111,7 +111,7 @@ Da das Hintergrundbild zu groß für den internen Speicher des ESP32 ist, kann d
  *  - Op:       Bit-Shifting & Masking (keine Divisionen).
  *  - Scaling:  Fixed-Point Helligkeitsberechnung ((val * brightness) >> 8).
  *  - Feature:  Color Clustering (Smart Downsampling) for ESP32 Preview.
- *  - Output:   32-Bit APA102 Frames (0xFF | B | G | R) direkt in 'backBuf'.
+ *  - Output:   32-Bit APA102 Frames (0xFF|B|G|R) direkt in 'backBuf'.
 
  STAGE 3: SWAP (Atomic Transition)
  * - Trigger:  Sobald Frame vollständig verarbeitet ist.
@@ -181,13 +181,13 @@ Beispiel:
 
 ## [ PIPELINE ARCHITECTURE @ ESP32 ]
 
- 1. CORE ARCHITECTURE (ESP32-D0WD) (Dual-Core Xtensa LX6)
+ CORE ARCHITECTURE (ESP32-D0WD) (Dual-Core Xtensa LX6)
  * - Clock: 240 MHz (Max Performance Profile via setCpuFrequencyMhz).
  * - Cores: Asymmetric Multiprocessing (AMP).
  * - **Core 0:** High-Speed Serial Ingest, WiFi Stack, WebServer & System Monitor.
  * - **Core 1:** UI Rendering & Matrix Engine (Dedicated Graphics Core).
 
- 2. DISPLAY SUBSYSTEM
+ DISPLAY SUBSYSTEM
  * - Driver: TFT_eSPI (Hardware SPI) @80MHZ.
  * - Mode:   Direct Framebuffer Access.
 
@@ -328,13 +328,14 @@ Nach erfolgreicher Konfiguration lädt der ESP32 die Daten, verbindet sich mit d
 ### 4. WLAN ändern / Reset
 Um die WLAN-Daten zu löschen und den Setup-Modus erneut zu starten:
 
-*   **Methode A (Hardware):**
-    1.  Schalte den ESP32 ein.
-    2.  Innerhalb der ersten **1.5 Sekunden** (während der Boot-Text "Hold BOOT to Reset..." sichtbar ist), halte den **BOOT-Button** gedrückt.
-    3.  Das Display wird rot ("RESET WIFI..."), die Daten werden gelöscht und das Gerät startet im AP-Modus neu.
+ * - **Methode A (Hardware):**
 
-*   **Methode B (Software):**
-    Rufe im Browser die URL `http://<DEINE-ESP-IP>/reset_wifi` auf.
+ 1.  Schalte den ESP32 ein.
+ 2.  Innerhalb der ersten **1.5 Sekunden** (während der Boot-Text "Hold BOOT to Reset..." sichtbar ist), halte den **BOOT-Button** gedrückt.
+ 3.  Das Display wird rot ("RESET WIFI..."), die Daten werden gelöscht und das Gerät startet im AP-Modus neu.
+
+ * -  **Methode B (Software):**
+ 1. Rufe im Browser die URL `http://<DEINE-ESP-IP>/reset_wifi` auf.
 
 ### 5. Zugangsdaten (OTA Update)
 Für Firmware-Updates über das Webinterface (`/upload`):
@@ -345,7 +346,6 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 
 ### Teensy 4.0 (Externer Taster an Pin 2)
 | Aktion | Funktion |
-| :--- | :--- |
 | **Beim Start gedrückt halten** | **Reset der Konfiguration:** Löscht die gespeicherte LED-Anzahl und andere Einstellungen. Der Teensy startet im "Learning Mode". |
 | **1x Klick** | Startet den **LED-Selbsttest** (Knight-Rider-Effekt). |
 | **2x Klick** | Schaltet die **globale Helligkeit** um (100% → 50% → 15% → 100%). |
@@ -356,7 +356,6 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 
 ### ESP32 (BOOT-Taster auf dem Board)
 | Aktion | Funktion |
-| :--- | :--- |
 | **Beim Start (1.5s Fenster)** | **WLAN-Reset:** Löscht die gespeicherten WLAN-Daten (siehe Setup). |
 | **1x Klick (im Betrieb)** | Ändert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
 
