@@ -346,6 +346,7 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 
 ### Teensy 4.0 (Externer Taster an Pin 2)
 | Aktion | Funktion |
+| :--- | :--- |
 | **Beim Start gedrückt halten** | **Reset der Konfiguration:** Löscht die gespeicherte LED-Anzahl und andere Einstellungen. Der Teensy startet im "Learning Mode". |
 | **1x Klick** | Startet den **LED-Selbsttest** (Knight-Rider-Effekt). |
 | **2x Klick** | Schaltet die **globale Helligkeit** um (100% → 50% → 15% → 100%). |
@@ -356,6 +357,7 @@ Für Firmware-Updates über das Webinterface (`/upload`):
 
 ### ESP32 (BOOT-Taster auf dem Board)
 | Aktion | Funktion |
+| :--- | :--- |
 | **Beim Start (1.5s Fenster)** | **WLAN-Reset:** Löscht die gespeicherten WLAN-Daten (siehe Setup). |
 | **1x Klick (im Betrieb)** | Ändert die Fallgeschwindigkeit des **Matrix-Regens** auf dem ESP32-Display. |
 
